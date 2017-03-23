@@ -1,0 +1,10 @@
+*.rsc
+*.dmb
+*.rsc.lk
+*.dyn.rsc.lk
+*.dyn.rsc
+*.lk
+*.int
+/tgstation.dyn.rsc.lk
+/tgstation.rsc
+/tgstation.dyn.rsc

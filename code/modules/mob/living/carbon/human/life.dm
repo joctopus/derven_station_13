@@ -943,12 +943,10 @@
 						nutrition_icon.icon_state = "nutrition1"
 					if(150 to 250)
 						nutrition_icon.icon_state = "nutrition2"
-						adjustBruteLoss(1)
 					if(100 to 150)
-						adjustBruteLoss(rand(1,2))
 						nutrition_icon.icon_state = "nutrition3"
 					else
-						adjustBruteLoss(rand(2,4))
+						adjustOxyLoss(rand(2,4))
 						nutrition_icon.icon_state = "nutrition4"
 
 			if (pressure)

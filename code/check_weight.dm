@@ -10,7 +10,7 @@
 			weight_sum += ST.check_my_weight()
 
 
-	if(weight_sum > 25)
+	if(weight_sum > 48)
 		return 1
 	else
 		return 0
