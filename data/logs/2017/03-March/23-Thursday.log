@@ -1,0 +1,38 @@
+
+
+Starting up. 00:19.05
+---------------------
+Dear Diary....
+
+
+[00:19:05]ADMIN: Loading jobban_rank
+[00:19:05]ADMIN: jobban_keylist was empty
+[00:19:05]ADMIN: Updating jobbanfile!
+[00:19:05]ADMIN: Loading Banlist
+[00:24:43]ADMIN: S_Sting has started the game.
+[00:24:43]ACCESS: Logout: *no client*/(S_Sting)
+[00:24:43]ACCESS: Login: S_Sting/(Percival Robertson) from 127.0.0.1
+[00:29:59]SAY: Ian/ : AUUUUUU
+[00:30:13]GAME: SQL ERROR during player polling. Failed to connect.
+[00:31:19]GAME: SQL ERROR during admin polling. Failed to connect.
+[00:34:27]SAY: Ian/ : Woof!
+[00:36:26]SAY: Ian/ : AUUUUUU
+[00:38:57]SAY: Ian/ : YAP
+[00:39:56]SAY: Ian/ : Bark!
+[00:42:37]GAME: SQL ERROR during player polling. Failed to connect.
+[00:42:40]SAY: Ian/ : Bark!
+[00:43:46]GAME: SQL ERROR during admin polling. Failed to connect.
+[00:47:58]SAY: Ian/ : YAP
+[00:52:09]SAY: Ian/ : Woof!
+[00:52:27]SAY: Ian/ : Bark!
+[00:55:11]SAY: Ian/ : Woof!
+[00:55:16]GAME: SQL ERROR during player polling. Failed to connect.
+[00:56:26]GAME: SQL ERROR during admin polling. Failed to connect.
+[00:56:55]ADMIN: S_Sting/(Percival Robertson) jumped to 99,142,1 in Central Primary Hallway
+[00:57:01]ADMIN: S_Sting/(Percival Robertson) jumped to 112,150,1 in Fore Primary Hallway
+[00:57:07]ADMIN: S_Sting/(Percival Robertson) jumped to 113,170,1 in Brig
+[00:57:10]ADMIN: S_Sting/(Percival Robertson) jumped to 113,178,1 in Brig
+[00:57:13]ADMIN: S_Sting/(Percival Robertson) jumped to 113,186,1 in Security
+[00:57:17]ADMIN: S_Sting/(Percival Robertson) jumped to 108,186,1 in Warden
+[00:58:26]ADMIN: S_Sting/(Percival Robertson) jumped to 112,185,1 in Security
+[00:59:19]ACCESS: Logout: S_Sting/(Percival Robertson)

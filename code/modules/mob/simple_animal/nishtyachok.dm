@@ -1,0 +1,5 @@
+/obj/effects/nistyachok_spawner/New()
+	..()
+	var/atom/mynishtyachok = pick(null, /obj/item/weapon/butch, /obj/item/weapon/empgrenade, null, /obj/item/weapon/gun/energy/stunrevolver, /obj/item/weapon/handcuffs, null, /obj/item/weapon/melee/classic_baton, /obj/item/weapon/soap/nanotrasen, /obj/item/weapon/storage/firstaid/regular)
+	if(mynishtyachok != null)
+		new mynishtyachok(src.loc)
