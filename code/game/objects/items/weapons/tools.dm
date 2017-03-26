@@ -20,6 +20,22 @@ WELDINGTOOOL
 	m_amt = 150
 	origin_tech = "materials=1;engineering=1"
 
+	super_wrench
+		color = "red"
+		verb/anchor_unanchor_machinery()
+			var/turf/FRONT = get_step(usr.loc, usr.dir)
+			set src in usr
+			for(var/obj/machinery/M in FRONT)
+				if(!istype(M))	return ..()
+				if(M.anchored == 0)
+					M.anchored = 1
+					usr << "\blue You secure the [M] to the floor."
+					return
+				else
+					M.anchored = 0
+					usr << "\blue You unsecure the [M] from the floor."
+					return
+
 
 
 // SCREWDRIVER
