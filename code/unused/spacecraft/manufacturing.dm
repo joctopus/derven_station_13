@@ -115,7 +115,7 @@ obj/machinery/nanosprayer/attack_hand(user as mob)
 		if(2)
 			dat += text("Status: Spray Task Complete<BR>")
 		if(3)
-			dat += text("Status: <B><FONT color_hyalor=RED>OVERHEATED</FONT><BR>")
+			dat += text("Status: <B><font color=RED>OVERHEATED</FONT><BR>")
 	if(state == 1)
 		if(points <= 0)
 			points = 1

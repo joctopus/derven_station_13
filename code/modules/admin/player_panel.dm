@@ -80,7 +80,7 @@
 					body += "<a href='?src=\ref[src];adminplayersubtlemessage="+ref+"'>SM</a> - "
 					body += "<a href='?src=\ref[src];adminplayerobservejump="+ref+"'>JMP</a><br>"
 					if(antagonist == 1)
-						body += "<font size='2'><a href='?src=\ref[src];secretsadmin=check_antagonist'><b><font color_hyalor='red'>Antagonist</font></b></a> with "+karma+" karma</font>";
+						body += "<font size='2'><a href='?src=\ref[src];secretsadmin=check_antagonist'><b><font color='red'>Antagonist</font></b></a> with "+karma+" karma</font>";
 					else
 						body += "<font size='2'>"+karma+" karma</font>";
 
@@ -141,7 +141,7 @@
 						return;
 					locked_tabs.push(id);
 					var notice_span = document.getElementById(notice_span_id);
-					notice_span.innerHTML = "<font color_hyalor='red'>Locked</font> ";
+					notice_span.innerHTML = "<font color='red'>Locked</font> ";
 					//link.setAttribute("onClick","attempt('"+id+"','"+link_id+"','"+notice_span_id+"');");
 					//document.write("removeFromLocked('"+id+"','"+link_id+"','"+notice_span_id+"')");
 					//document.write("aa - "+link.getAttribute("onClick"));
@@ -381,9 +381,9 @@
 			if(0)
 				dat += {"<td align=center><A HREF='?src=\ref[src];traitor=\ref[M]'>Traitor?</A></td>"}
 			if(1)
-				dat += {"<td align=center><A HREF='?src=\ref[src];traitor=\ref[M]'><font color_hyalor=red>Traitor?</font></A></td>"}
+				dat += {"<td align=center><A HREF='?src=\ref[src];traitor=\ref[M]'><font color=red>Traitor?</font></A></td>"}
 			if(2)
-				dat += {"<td align=center><A HREF='?src=\ref[src];traitor=\ref[M]'><font color_hyalor=red><b>Traitor?</b></font></A></td>"}
+				dat += {"<td align=center><A HREF='?src=\ref[src];traitor=\ref[M]'><font color=red><b>Traitor?</b></font></A></td>"}
 
 		var/currentkarma = 0
 		if(show_karma)

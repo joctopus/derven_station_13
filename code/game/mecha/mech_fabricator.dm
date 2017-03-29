@@ -141,7 +141,7 @@
 			for(var/ID in list(H.equipped(), H.wear_id, H.belt))
 				if(src.check_access(ID))
 					return 1
-		M << "<font color_hyalor='red'>You don't have required permissions to use [src]</font>"
+		M << "<font color='red'>You don't have required permissions to use [src]</font>"
 		return 0
 
 	check_access(obj/item/weapon/card/id/I)
@@ -344,7 +344,7 @@
 				return 0
 			if(!check_resources(part))
 				src.visible_message("\icon[src] <b>[src]</b> beeps, \"Not enough resources. Queue processing stopped\".")
-				temp = {"<font color_hyalor='red'>Not enough resources to build next part.</font><br>
+				temp = {"<font color='red'>Not enough resources to build next part.</font><br>
 							<a href='?src=\ref[src];process_queue=1'>Try again</a> | <a href='?src=\ref[src];clear_temp=1'>Return</a><a>"}
 				return 0
 			remove_from_queue(1)

@@ -23,10 +23,10 @@
 
 
 	attack(mob/living/M as mob, mob/user as mob)
-		M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Has been flashed (attempt) with [src.name]  by [user.name] ([user.ckey])</font>")
-		user.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Used the [src.name] to flash [M.name] ([M.ckey])</font>")
+		M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been flashed (attempt) with [src.name]  by [user.name] ([user.ckey])</font>")
+		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Used the [src.name] to flash [M.name] ([M.ckey])</font>")
 
-		log_attack("<font color_hyalor='red'>[user.name] ([user.ckey]) Used the [src.name] to flash [M.name] ([M.ckey])</font>")
+		log_attack("<font color='red'>[user.name] ([user.ckey]) Used the [src.name] to flash [M.name] ([M.ckey])</font>")
 
 
 		if(!clown_check(user))	return

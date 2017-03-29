@@ -584,7 +584,7 @@
 		if (!M.client)
 			for(var/mob/dead/observer/ghost in world)
 				if(ghost.corpse == M && ghost.client)
-					ghost << "<b><font color_hyalor = #330033><font size = 3>Your corpse has been placed into a cloning scanner. Return to your body if you want to be ressurected/cloned!</b> (Verbs -> Ghost -> Re-enter corpse)</font color_hyalor>"
+					ghost << "<b><font color = #330033><font size = 3>Your corpse has been placed into a cloning scanner. Return to your body if you want to be ressurected/cloned!</b> (Verbs -> Ghost -> Re-enter corpse)</font color>"
 					break
 	del(G)
 	return
@@ -716,7 +716,7 @@
 	else
 		if (src.connected) //Is something connected?
 			var/mob/occupant = src.connected.occupant
-			dat = "<font color_hyalor='blue'><B>Occupant Statistics:</B></FONT><BR>" //Blah obvious
+			dat = "<font color='blue'><B>Occupant Statistics:</B></FONT><BR>" //Blah obvious
 			if(occupant && occupant.dna) //is there REALLY someone in there?
 				if(occupant.mutations & HUSK)
 					dat += "The occupant's DNA structure is of an unknown configuration, please insert a subject with a standard DNA structure.<BR><BR>" //NOPE. -Pete
@@ -733,11 +733,11 @@
 							t1 = "Unconscious"
 						else
 							t1 = "*dead*"
-					dat += text("[]\tHealth %: [] ([])</FONT><BR>", (occupant.health > 50 ? "<font color_hyalor='blue'>" : "<font color_hyalor='red'>"), occupant.health, t1)
-					dat += text("<font color_hyalor='green'>Radiation Level: []%</FONT><BR><BR>", occupant.radiation)
-					dat += text("Unique Enzymes : <font color_hyalor='blue'>[]</FONT><BR>", uppertext(occupant.dna.unique_enzymes))
-					dat += text("Unique Identifier: <font color_hyalor='blue'>[]</FONT><BR>", occupant.dna.uni_identity)
-					dat += text("Structural Enzymes: <font color_hyalor='blue'>[]</FONT><BR><BR>", occupant.dna.struc_enzymes)
+					dat += text("[]\tHealth %: [] ([])</FONT><BR>", (occupant.health > 50 ? "<font color='blue'>" : "<font color='red'>"), occupant.health, t1)
+					dat += text("<font color='green'>Radiation Level: []%</FONT><BR><BR>", occupant.radiation)
+					dat += text("Unique Enzymes : <font color='blue'>[]</FONT><BR>", uppertext(occupant.dna.unique_enzymes))
+					dat += text("Unique Identifier: <font color='blue'>[]</FONT><BR>", occupant.dna.uni_identity)
+					dat += text("Structural Enzymes: <font color='blue'>[]</FONT><BR><BR>", occupant.dna.struc_enzymes)
 					dat += text("<A href='?src=\ref[];unimenu=1'>Modify Unique Identifier</A><BR>", src)
 					dat += text("<A href='?src=\ref[];strucmenu=1'>Modify Structural Enzymes</A><BR><BR>", src)
 					dat += text("<A href='?src=\ref[];buffermenu=1'>View/Edit/Transfer Buffer</A><BR><BR>", src)
@@ -757,7 +757,7 @@
 				dat += text("<A href='?src=\ref[];eject_disk=1'>Eject Disk</A><BR>", src)
 			dat += text("<BR><BR><A href='?src=\ref[];mach_close=scannernew'>Close</A>", user)
 		else
-			dat = "<font color_hyalor='red'> Error: No DNA Modifier connected. </FONT>"
+			dat = "<font color='red'> Error: No DNA Modifier connected. </FONT>"
 	user << browse(dat, "window=scannernew;size=550x625")
 	onclose(user, "scannernew")
 	return
@@ -800,8 +800,8 @@
 			temphtml = null
 			delete = 0
 		if (href_list["radset"])
-			src.temphtml = text("Radiation Duration: <B><font color_hyalor='green'>[]</B></FONT><BR>", src.radduration)
-			src.temphtml += text("Radiation Intensity: <font color_hyalor='green'><B>[]</B></FONT><BR><BR>", src.radstrength)
+			src.temphtml = text("Radiation Duration: <B><font color='green'>[]</B></FONT><BR>", src.radduration)
+			src.temphtml += text("Radiation Intensity: <font color='green'><B>[]</B></FONT><BR><BR>", src.radstrength)
 			src.temphtml += text("<A href='?src=\ref[];radleminus=1'>--</A> Duration <A href='?src=\ref[];radleplus=1'>++</A><BR>", src, src)
 			src.temphtml += text("<A href='?src=\ref[];radinminus=1'>--</A> Intesity <A href='?src=\ref[];radinplus=1'>++</A><BR>", src, src)
 			src.delete = 0
@@ -825,11 +825,11 @@
 			dopage(src,"radset")
 		////////////////////////////////////////////////////////
 		if (href_list["unimenu"])
-			//src.temphtml = text("Unique Identifier: <font color_hyalor='blue'>[]</FONT><BR><BR>", src.connected.occupant.dna.uni_identity)
-			src.temphtml = text("Unique Identifier: <font color_hyalor='blue'>[getleftblocks(src.connected.occupant.dna.uni_identity,uniblock,3)][src.subblock == 1 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),1,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),1,1)][src.subblock == 2 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),2,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),2,1)][src.subblock == 3 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),3,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),3,1)][getrightblocks(src.connected.occupant.dna.uni_identity,uniblock,3)]</FONT><BR><BR>")
-			src.temphtml += text("Selected Block: <font color_hyalor='blue'><B>[]</B></FONT><BR>", src.uniblock)
+			//src.temphtml = text("Unique Identifier: <font color='blue'>[]</FONT><BR><BR>", src.connected.occupant.dna.uni_identity)
+			src.temphtml = text("Unique Identifier: <font color='blue'>[getleftblocks(src.connected.occupant.dna.uni_identity,uniblock,3)][src.subblock == 1 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),1,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),1,1)][src.subblock == 2 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),2,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),2,1)][src.subblock == 3 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),3,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.uni_identity,src.uniblock,3),3,1)][getrightblocks(src.connected.occupant.dna.uni_identity,uniblock,3)]</FONT><BR><BR>")
+			src.temphtml += text("Selected Block: <font color='blue'><B>[]</B></FONT><BR>", src.uniblock)
 			src.temphtml += text("<A href='?src=\ref[];unimenuminus=1'><-</A> Block <A href='?src=\ref[];unimenuplus=1'>-></A><BR><BR>", src, src)
-			src.temphtml += text("Selected Sub-Block: <font color_hyalor='blue'><B>[]</B></FONT><BR>", src.subblock)
+			src.temphtml += text("Selected Sub-Block: <font color='blue'><B>[]</B></FONT><BR>", src.subblock)
 			src.temphtml += text("<A href='?src=\ref[];unimenusubminus=1'><-</A> Sub-Block <A href='?src=\ref[];unimenusubplus=1'>-></A><BR><BR>", src, src)
 			src.temphtml += "<B>Modify Block:</B><BR>"
 			src.temphtml += text("<A href='?src=\ref[];unipulse=1'>Radiation</A><BR>", src)
@@ -899,11 +899,11 @@
 		////////////////////////////////////////////////////////
 		if (href_list["strucmenu"])
 			if(src.connected.occupant)
-				src.temphtml = text("Structural Enzymes: <font color_hyalor='blue'>[getleftblocks(src.connected.occupant.dna.struc_enzymes,strucblock,3)][src.subblock == 1 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),1,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),1,1)][src.subblock == 2 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),2,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),2,1)][src.subblock == 3 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),3,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),3,1)][getrightblocks(src.connected.occupant.dna.struc_enzymes,strucblock,3)]</FONT><BR><BR>")
-				//src.temphtml = text("Structural Enzymes: <font color_hyalor='blue'>[]</FONT><BR><BR>", src.connected.occupant.dna.struc_enzymes)
-				src.temphtml += text("Selected Block: <font color_hyalor='blue'><B>[]</B></FONT><BR>", src.strucblock)
+				src.temphtml = text("Structural Enzymes: <font color='blue'>[getleftblocks(src.connected.occupant.dna.struc_enzymes,strucblock,3)][src.subblock == 1 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),1,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),1,1)][src.subblock == 2 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),2,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),2,1)][src.subblock == 3 ? "<U><B>"+getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),3,1)+"</U></B>" : getblock(getblock(src.connected.occupant.dna.struc_enzymes,src.strucblock,3),3,1)][getrightblocks(src.connected.occupant.dna.struc_enzymes,strucblock,3)]</FONT><BR><BR>")
+				//src.temphtml = text("Structural Enzymes: <font color='blue'>[]</FONT><BR><BR>", src.connected.occupant.dna.struc_enzymes)
+				src.temphtml += text("Selected Block: <font color='blue'><B>[]</B></FONT><BR>", src.strucblock)
 				src.temphtml += text("<A href='?src=\ref[];strucmenuminus=1'><-</A> Block <A href='?src=\ref[];strucmenuplus=1'>-></A><BR><BR>", src, src)
-				src.temphtml += text("Selected Sub-Block: <font color_hyalor='blue'><B>[]</B></FONT><BR>", src.subblock)
+				src.temphtml += text("Selected Sub-Block: <font color='blue'><B>[]</B></FONT><BR>", src.subblock)
 				src.temphtml += text("<A href='?src=\ref[];strucmenusubminus=1'><-</A> Sub-Block <A href='?src=\ref[];strucmenusubplus=1'>-></A><BR><BR>", src, src)
 				src.temphtml += "<B>Modify Block:</B><BR>"
 				src.temphtml += text("<A href='?src=\ref[];strucpulse=1'>Radiation</A><BR>", src)
@@ -990,9 +990,9 @@
 			if (!(src.buffer1))
 				src.temphtml += "Buffer Empty<BR>"
 			else
-				src.temphtml += text("Data: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer1)
-				src.temphtml += text("By: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer1owner)
-				src.temphtml += text("Label: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer1label)
+				src.temphtml += text("Data: <font color='blue'>[]</FONT><BR>", src.buffer1)
+				src.temphtml += text("By: <font color='blue'>[]</FONT><BR>", src.buffer1owner)
+				src.temphtml += text("Label: <font color='blue'>[]</FONT><BR>", src.buffer1label)
 			if (src.connected.occupant && !(src.connected.occupant.mutations & HUSK)) src.temphtml += text("Save : <A href='?src=\ref[];b1addui=1'>UI</A> - <A href='?src=\ref[];b1adduiue=1'>UI+UE</A> - <A href='?src=\ref[];b1addse=1'>SE</A><BR>", src, src, src)
 			if (src.buffer1) src.temphtml += text("Transfer to: <A href='?src=\ref[];b1transfer=1'>Occupant</A> - <A href='?src=\ref[];b1injector=1'>Injector</A><BR>", src, src)
 			//if (src.buffer1) src.temphtml += text("<A href='?src=\ref[];b1iso=1'>Isolate Block</A><BR>", src)
@@ -1004,9 +1004,9 @@
 			if (!(src.buffer2))
 				src.temphtml += "Buffer Empty<BR>"
 			else
-				src.temphtml += text("Data: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer2)
-				src.temphtml += text("By: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer2owner)
-				src.temphtml += text("Label: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer2label)
+				src.temphtml += text("Data: <font color='blue'>[]</FONT><BR>", src.buffer2)
+				src.temphtml += text("By: <font color='blue'>[]</FONT><BR>", src.buffer2owner)
+				src.temphtml += text("Label: <font color='blue'>[]</FONT><BR>", src.buffer2label)
 			if (src.connected.occupant && !(src.connected.occupant.mutations & HUSK)) src.temphtml += text("Save : <A href='?src=\ref[];b2addui=1'>UI</A> - <A href='?src=\ref[];b2adduiue=1'>UI+UE</A> - <A href='?src=\ref[];b2addse=1'>SE</A><BR>", src, src, src)
 			if (src.buffer2) src.temphtml += text("Transfer to: <A href='?src=\ref[];b2transfer=1'>Occupant</A> - <A href='?src=\ref[];b2injector=1'>Injector</A><BR>", src, src)
 			//if (src.buffer2) src.temphtml += text("<A href='?src=\ref[];b2iso=1'>Isolate Block</A><BR>", src)
@@ -1018,9 +1018,9 @@
 			if (!(src.buffer3))
 				src.temphtml += "Buffer Empty<BR>"
 			else
-				src.temphtml += text("Data: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer3)
-				src.temphtml += text("By: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer3owner)
-				src.temphtml += text("Label: <font color_hyalor='blue'>[]</FONT><BR>", src.buffer3label)
+				src.temphtml += text("Data: <font color='blue'>[]</FONT><BR>", src.buffer3)
+				src.temphtml += text("By: <font color='blue'>[]</FONT><BR>", src.buffer3owner)
+				src.temphtml += text("Label: <font color='blue'>[]</FONT><BR>", src.buffer3label)
 			if (src.connected.occupant && !(src.connected.occupant.mutations & HUSK)) src.temphtml += text("Save : <A href='?src=\ref[];b3addui=1'>UI</A> - <A href='?src=\ref[];b3adduiue=1'>UI+UE</A> - <A href='?src=\ref[];b3addse=1'>SE</A><BR>", src, src, src)
 			if (src.buffer3) src.temphtml += text("Transfer to: <A href='?src=\ref[];b3transfer=1'>Occupant</A> - <A href='?src=\ref[];b3injector=1'>Injector</A><BR>", src, src)
 			//if (src.buffer3) src.temphtml += text("<A href='?src=\ref[];b3iso=1'>Isolate Block</A><BR>", src)

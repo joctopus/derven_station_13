@@ -176,7 +176,7 @@
 							else
 								src.health -= W.force *0.2
 						if(2) //Shard breaks
-							user << "<font color_hyalor='blue'>The shard breaks!</font>"
+							user << "<font color='blue'>The shard breaks!</font>"
 							del W
 							return
 						if(3) //You somehow manage to damage the grille. Beefin' up the damage, a bit. Instead of doing 10% damage it now does... 20% of the shard's force? Yeah, 20% sounds good at 66% chance of failure.
@@ -185,7 +185,7 @@
 				var/outcome = pick(1,2,3)
 				switch(outcome)
 					if(1) // Let's see, the guy damages it but takes some damage back
-						user << "<font color_hyalor='red'>You cut yourself with the shard as you hit the grille!</font>"
+						user << "<font color='red'>You cut yourself with the shard as you hit the grille!</font>"
 						src.health -= W.force *0.2
 						var/brutedamagetaken = rand(3,6)
 						H.take_organ_damage(brutedamagetaken,0)
@@ -195,7 +195,7 @@
 						else
 							src.health -= W.force *0.2
 					if(3) // It breaks in his hands. Ouch.
-						user << "<font color_hyalor='red'>As you smash the grille the shard breaks into smithereens in your palm!</font>"
+						user << "<font color='red'>As you smash the grille the shard breaks into smithereens in your palm!</font>"
 						src.health -= W.force *0.2
 						del(W)
 						var/brutedamagetaken = rand(5,8)

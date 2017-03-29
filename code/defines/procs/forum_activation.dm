@@ -30,7 +30,7 @@
 
 	dbcon.Connect("dbi:mysql:[TG13db]:[TG13address]:[TG13port]","[TG13user]","[TG13pass]")
 	if(!dbcon.IsConnected())
-		src << "<font color_hyalor=red><b>Server Connection Error</b> : Unable to open a connection with the forum database.</font>"
+		src << "<font color=red><b>Server Connection Error</b> : Unable to open a connection with the forum database.</font>"
 		src << "<i>Potential causes for this problem: Incorrect login information, incorrect server connection information, the forum server is down or not responding to requests, your firewall is blocking outgoing SQL requests.</i>"
 		return
 

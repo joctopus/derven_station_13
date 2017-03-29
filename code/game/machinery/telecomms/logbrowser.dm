@@ -52,7 +52,7 @@
 				for(var/datum/comm_log_entry/C in SelectedServer.log_entries)
 					i++
 
-					dat += "<li><font color_hyalor = #008F00>[C.name]</font color_hyalor>  <font color_hyalor = #FF0000><a href='?src=\ref[src];delete=[i]'>\[X\]</a></font color_hyalor><br>"
+					dat += "<li><font color = #008F00>[C.name]</font color>  <font color = #FF0000><a href='?src=\ref[src];delete=[i]'>\[X\]</a></font color><br>"
 
 					// -- Determine race of orator --
 
@@ -92,19 +92,19 @@
 					// -- If the orator is a human, or universal translate is active, OR mob has universal speech on --
 
 					if(language == "Human" || universal_translate || C.parameters["uspeech"])
-						dat += "<u><font color_hyalor = #18743E>Data type</font color_hyalor></u>: [C.input_type]<br>"
-						dat += "<u><font color_hyalor = #18743E>Orator</font color_hyalor></u>: [C.parameters["name"]] (Job: [C.parameters["job"]])<br>"
-						dat += "<u><font color_hyalor = #18743E>Race</font color_hyalor></u>: [race]<br>"
-						dat += "<u><font color_hyalor = #18743E>Contents</font color_hyalor></u>: \"[C.parameters["message"]]\"<br>"
+						dat += "<u><font color = #18743E>Data type</font color></u>: [C.input_type]<br>"
+						dat += "<u><font color = #18743E>Orator</font color></u>: [C.parameters["name"]] (Job: [C.parameters["job"]])<br>"
+						dat += "<u><font color = #18743E>Race</font color></u>: [race]<br>"
+						dat += "<u><font color = #18743E>Contents</font color></u>: \"[C.parameters["message"]]\"<br>"
 
 
 					// -- Orator is not human and universal translate not active --
 
 					else
-						dat += "<u><font color_hyalor = #18743E>Data type</font color_hyalor></u>: Audio File<br>"
-						dat += "<u><font color_hyalor = #18743E>Source</font color_hyalor></u>: <i>Unidentifiable</i><br>"
-						dat += "<u><font color_hyalor = #18743E>Race</font color_hyalor></u>: [race]<br>"
-						dat += "<u><font color_hyalor = #18743E>Contents</font color_hyalor></u>: <i>Unintelligble</i><br>"
+						dat += "<u><font color = #18743E>Data type</font color></u>: Audio File<br>"
+						dat += "<u><font color = #18743E>Source</font color></u>: <i>Unidentifiable</i><br>"
+						dat += "<u><font color = #18743E>Race</font color></u>: [race]<br>"
+						dat += "<u><font color = #18743E>Contents</font color></u>: <i>Unintelligble</i><br>"
 
 					dat += "</li><br>"
 
@@ -149,7 +149,7 @@
 
 				if("scan")
 					if(servers.len > 0)
-						temp = "<font color_hyalor = #D70B00>- FAILED: CANNOT PROBE WHEN BUFFER FULL -</font color_hyalor>"
+						temp = "<font color = #D70B00>- FAILED: CANNOT PROBE WHEN BUFFER FULL -</font color>"
 
 					else
 						for(var/obj/machinery/telecomms/server/T in range(25, src))
@@ -157,9 +157,9 @@
 								servers.Add(T)
 
 						if(!servers.len)
-							temp = "<font color_hyalor = #D70B00>- FAILED: UNABLE TO LOCATE SERVERS IN \[[network]\] -</font color_hyalor>"
+							temp = "<font color = #D70B00>- FAILED: UNABLE TO LOCATE SERVERS IN \[[network]\] -</font color>"
 						else
-							temp = "<font color_hyalor = #336699>- [servers.len] SERVERS PROBED & BUFFERED -</font color_hyalor>"
+							temp = "<font color = #336699>- [servers.len] SERVERS PROBED & BUFFERED -</font color>"
 
 						screen = 0
 
@@ -168,13 +168,13 @@
 
 				var/datum/comm_log_entry/D = SelectedServer.log_entries[text2num(href_list["delete"])]
 
-				temp = "<font color_hyalor = #336699>- DELETED ENTRY: [D.name] -</font color_hyalor>"
+				temp = "<font color = #336699>- DELETED ENTRY: [D.name] -</font color>"
 
 				SelectedServer.log_entries.Remove(D)
 				del(D)
 
 			else
-				temp = "<font color_hyalor = #D70B00>- FAILED: NO SELECTED MACHINE -</font color_hyalor>"
+				temp = "<font color = #D70B00>- FAILED: NO SELECTED MACHINE -</font color>"
 
 		if(href_list["input"])
 
@@ -182,14 +182,14 @@
 
 			if(newnet && usr in range(1, src) && newnet != network)
 				if(length(newnet) > 15)
-					temp = "<font color_hyalor = #D70B00>- FAILED: NETWORK TAG STRING TOO LENGHTLY -</font color_hyalor>"
+					temp = "<font color = #D70B00>- FAILED: NETWORK TAG STRING TOO LENGHTLY -</font color>"
 
 				else
 
 					network = newnet
 					screen = 0
 					machines = list()
-					temp = "<font color_hyalor = #336699>- NEW NETWORK TAG SET IN ADDRESS \[[network]\] -</font color_hyalor>"
+					temp = "<font color = #336699>- NEW NETWORK TAG SET IN ADDRESS \[[network]\] -</font color>"
 
 		updateUsrDialog()
 		return

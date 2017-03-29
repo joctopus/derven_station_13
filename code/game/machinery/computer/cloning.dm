@@ -98,9 +98,9 @@
 		world << "SEARCHING FOR MACHEIN"
 		src.temp = ""
 		if (isnull(src.scanner))
-			src.temp += " <font color_hyalor=red>SCNR-ERROR</font>"
+			src.temp += " <font color=red>SCNR-ERROR</font>"
 		if (isnull(src.pod1))
-			src.temp += " <font color_hyalor=red>POD1-ERROR</font>"
+			src.temp += " <font color=red>POD1-ERROR</font>"
 		else
 			src.pod1.connected = src
 
@@ -116,10 +116,10 @@
 	//world << "SEARCHING FOR MACHEIN"
 	//src.temp = ""
 	//if (isnull(src.scanner))
-	//	src.temp += " <font color_hyalor=red>SCNR-ERROR</font>"
+	//	src.temp += " <font color=red>SCNR-ERROR</font>"
 	if (!isnull(src.pod1))
 		src.pod1.connected = src
-	//	src.temp += " <font color_hyalor=red>POD1-ERROR</font>"
+	//	src.temp += " <font color=red>POD1-ERROR</font>"
 	//else
 
 	//if (src.temp == "")
@@ -187,13 +187,13 @@
 			dat += "<h4>Modules</h4>"
 			//dat += "<a href='byond://?src=\ref[src];relmodules=1'>Reload Modules</a>"
 			if (isnull(src.scanner))
-				dat += " <font color_hyalor=red>Scanner-ERROR</font><br>"
+				dat += " <font color=red>Scanner-ERROR</font><br>"
 			else
-				dat += " <font color_hyalor=green>Scanner-Found!</font><br>"
+				dat += " <font color=green>Scanner-Found!</font><br>"
 			if (isnull(src.pod1))
-				dat += " <font color_hyalor=red>Pod-ERROR</font><br>"
+				dat += " <font color=red>Pod-ERROR</font><br>"
 			else
-				dat += " <font color_hyalor=green>Pod-Found!</font><br>"
+				dat += " <font color=green>Pod-Found!</font><br>"
 
 			dat += "<h4>Scanner Functions</h4>"
 
@@ -224,7 +224,7 @@
 			dat += "<a href='byond://?src=\ref[src];menu=2'>Back</a><br>"
 
 			if (!src.active_record)
-				dat += "<font color_hyalor=red>ERROR: Record not found.</font>"
+				dat += "<font color=red>ERROR: Record not found.</font>"
 			else
 				dat += "<br><font size=1><a href='byond://?src=\ref[src];del_rec=1'>Delete Record</a></font><br>"
 				dat += "<b>Name:</b> [src.active_record.fields["name"]]<br>"
@@ -234,7 +234,7 @@
 				if ((H) && (istype(H)))
 					dat += "<b>Health:</b> [H.sensehealth()] | OXY-BURN-TOX-BRUTE<br>"
 				else
-					dat += "<font color_hyalor=red>Unable to locate implant.</font><br>"
+					dat += "<font color=red>Unable to locate implant.</font><br>"
 
 				if (!isnull(src.diskette))
 					dat += "<a href='byond://?src=\ref[src];disk=load'>Load from disk.</a>"

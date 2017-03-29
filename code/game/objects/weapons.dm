@@ -1,8 +1,8 @@
 //Banhammer deserves to be the first thing here
 
 /obj/item/weapon/banhammer/attack(mob/M as mob, mob/user as mob)
-	M << "<font color_hyalor='red'><b> You have been banned FOR NO REISIN by [user]<b></font>"
-	user << "<font color_hyalor='red'> You have <b>BANNED</b> [M]</font>"
+	M << "<font color='red'><b> You have been banned FOR NO REISIN by [user]<b></font>"
+	user << "<font color='red'> You have <b>BANNED</b> [M]</font>"
 
 /obj/effect/mine/proc/triggerrad(obj)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -84,7 +84,7 @@
 
 	if(istype(M, /mob/living/carbon/human) || istype(M, /mob/living/carbon/monkey))
 		for(var/mob/O in viewers(world.view, src.loc))
-			O << text("<font color_hyalor='red'>[M] triggered the \icon[] [src]</font>", src)
+			O << text("<font color='red'>[M] triggered the \icon[] [src]</font>", src)
 		triggered = 1
 		call(src,triggerproc)(M)
 

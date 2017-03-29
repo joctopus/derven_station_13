@@ -34,7 +34,7 @@ var/global/datum/controller/gameticker/ticker
 
 	do
 		pregame_timeleft = 180
-		world << "<B><FONT color_hyalor='blue'>Welcome to the pre-game lobby!</FONT></B>"
+		world << "<B><font color='blue'>Welcome to the pre-game lobby!</FONT></B>"
 		world << "Please, setup your character and select ready. Game will start in [pregame_timeleft] seconds"
 		while(current_state == GAME_STATE_PREGAME)
 			sleep(10)
@@ -111,7 +111,7 @@ var/global/datum/controller/gameticker/ticker
 			if (S.name != "AI")
 				del(S)
 		spawn(-1)
-			world << "<FONT color_hyalor='blue'><B>Enjoy the game!</B></FONT>"
+			world << "<font color='blue'><B>Enjoy the game!</B></FONT>"
 			world << sound('welcome.ogg') // Skie
 
 	spawn (3000)

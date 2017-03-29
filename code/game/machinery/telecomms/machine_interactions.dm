@@ -92,14 +92,14 @@
 					var/newid = input(usr, "Specify the new ID for this machine", src, id) as null|text
 					if(newid && usr in range(1, src))
 						id = newid
-						temp = "<font color_hyalor = #666633>-% New ID assigned: \"[id]\" %-</font color_hyalor>"
+						temp = "<font color = #666633>-% New ID assigned: \"[id]\" %-</font color>"
 
 				if("network")
 					var/newnet = input(usr, "Specify the new network for this machine. This will break all current links.", src, network) as null|text
 					if(newnet && usr in range(1, src) && newnet != network)
 
 						if(length(newnet) > 15)
-							temp = "<font color_hyalor = #666633>-% Too many characters in new network tag %-</font color_hyalor>"
+							temp = "<font color = #666633>-% Too many characters in new network tag %-</font color>"
 
 						else
 							for(var/obj/machinery/telecomms/T in links)
@@ -107,7 +107,7 @@
 
 							network = newnet
 							links = list()
-							temp = "<font color_hyalor = #666633>-% New network tag assigned: \"[network]\" %-</font color_hyalor>"
+							temp = "<font color = #666633>-% New network tag assigned: \"[network]\" %-</font color>"
 
 
 				if("freq")
@@ -119,12 +119,12 @@
 								newfreq *= 10 // shift the decimal one place
 
 							freq_listening.Add(newfreq)
-							temp = "<font color_hyalor = #666633>-% New frequency filter assigned: \"[newfreq] GHz\" %-</font color_hyalor>"
+							temp = "<font color = #666633>-% New frequency filter assigned: \"[newfreq] GHz\" %-</font color>"
 
 		if(href_list["delete"])
 
 			var/x = freq_listening[text2num(href_list["delete"])]
-			temp = "<font color_hyalor = #666633>-% Removed frequency filter [x] %-</font color_hyalor>"
+			temp = "<font color = #666633>-% Removed frequency filter [x] %-</font color>"
 			freq_listening.Remove(x)
 
 		if(href_list["link"])
@@ -135,7 +135,7 @@
 					src.links.Add(P.buffer)
 
 			else
-				temp = "<font color_hyalor = #666633>-% Unable to acquire buffer %-</font color_hyalor>"
+				temp = "<font color = #666633>-% Unable to acquire buffer %-</font color>"
 
 		if(href_list["buffer"])
 

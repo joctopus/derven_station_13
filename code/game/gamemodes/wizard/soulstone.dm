@@ -14,10 +14,10 @@
 	attack(mob/living/carbon/human/M as mob, mob/user as mob)
 		if(!istype(M, /mob/living/carbon/human))//If target is not a human.
 			return ..()
-		M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Has had their soul captured with [src.name] by [user.name] ([user.ckey])</font>")
-		user.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Used the [src.name] to capture the soul of [M.name] ([M.ckey])</font>")
+		M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their soul captured with [src.name] by [user.name] ([user.ckey])</font>")
+		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Used the [src.name] to capture the soul of [M.name] ([M.ckey])</font>")
 
-		log_attack("<font color_hyalor='red'>[user.name] ([user.ckey]) used the [src.name] to capture the soul of [M.name] ([M.ckey])</font>")
+		log_attack("<font color='red'>[user.name] ([user.ckey]) used the [src.name] to capture the soul of [M.name] ([M.ckey])</font>")
 
 
 		transfer_soul("VICTIM", M, user)
@@ -26,7 +26,7 @@
 	/*attack(mob/living/simple_animal/shade/M as mob, mob/user as mob)//APPARENTLY THEY NEED THEIR OWN SPECIAL SNOWFLAKE CODE IN THE LIVING ANIMAL DEFINES
 		if(!istype(M, /mob/living/simple_animal/shade))//If target is not a shade
 			return ..()
-		user.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Used the [src.name] to capture the soul of [M.name] ([M.ckey])</font>")
+		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Used the [src.name] to capture the soul of [M.name] ([M.ckey])</font>")
 
 		transfer_soul("SHADE", M, user)
 		return*/

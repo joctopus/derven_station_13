@@ -224,10 +224,10 @@ datum/preferences
 		for(var/datum/job/job in job_master.occupations)
 			var/rank = job.title
 			if(jobban_isbanned(user, rank))
-				HTML += "<font color_hyalor=red>[rank]</font><br>"
+				HTML += "<font color=red>[rank]</font><br>"
 				continue
 			if((job_civilian_low & ASSISTANT) && (rank != "Assistant"))
-				HTML += "<font color_hyalor=orange>[rank]</font><br>"
+				HTML += "<font color=orange>[rank]</font><br>"
 				continue
 			if((rank in command_positions) || (rank == "AI"))//Bold head jobs
 				HTML += "<b>[rank]<a href=\"byond://?src=\ref[user];preferences=1;occ=1;job=[rank]\"></b>"
@@ -236,20 +236,20 @@ datum/preferences
 
 			if(rank == "Assistant")//Assistant is special
 				if(job_civilian_low & ASSISTANT)
-					HTML += "<font color_hyalor=green>\[Yes]</font>"
+					HTML += "<font color=green>\[Yes]</font>"
 				else
-					HTML += "<font color_hyalor=red>\[No]</font>"
+					HTML += "<font color=red>\[No]</font>"
 				HTML += "</a><br>"
 				continue
 
 			if(GetJobDepartment(job, 1) & job.flag)
-				HTML += "<font color_hyalor=blue>\[High]</font>"
+				HTML += "<font color=blue>\[High]</font>"
 			else if(GetJobDepartment(job, 2) & job.flag)
-				HTML += "<font color_hyalor=green>\[Medium]</font>"
+				HTML += "<font color=green>\[Medium]</font>"
 			else if(GetJobDepartment(job, 3) & job.flag)
-				HTML += "<font color_hyalor=orange>\[Low]</font>"
+				HTML += "<font color=orange>\[Low]</font>"
 			else
-				HTML += "<font color_hyalor=red>\[NEVER]</font>"
+				HTML += "<font color=red>\[NEVER]</font>"
 			HTML += "</a><br>"
 
 		HTML += "<br>"

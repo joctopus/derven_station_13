@@ -33,7 +33,7 @@
 			t1 += "<a href='?src=\ref[src];logout=1'>Block</a><hr>"
 
 
-			t1 += conf_access == null ? "<font color_hyalor=red>All</font><br>" : "<a href='?src=\ref[src];access=all'>All</a><br>"
+			t1 += conf_access == null ? "<font color=red>All</font><br>" : "<a href='?src=\ref[src];access=all'>All</a><br>"
 
 			t1 += "<br>"
 

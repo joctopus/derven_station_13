@@ -108,20 +108,25 @@
 			spawn(48)
 				if(addiction == "alcohol")
 					if(!reagents.has_reagent("vodka", 10) || !reagents.has_reagent("tequilla", 10) || !reagents.has_reagent("vermouth", 10) || !reagents.has_reagent("wine", 10) || !reagents.has_reagent("kahlua", 10) || !reagents.has_reagent("cognac", 10) || !reagents.has_reagent("ale", 10) || !reagents.has_reagent("whiskey", 10))
-						if(prob(15))
-							src << "\red You want an alcohol!"
+						if(prob(5))
+							if(prob(3))
+								src << "\red You want an alcohol!"
 				if(addiction == "cigaretes")
-					if(cigaretes_need < 100)
-						cigaretes_need += 1
-					if(cigaretes_need > 20)
-						if(prob(15))
-							src << "\red You want a cigaretes!"
+					if(prob(5))
+						if(prob(3))
+							if(cigaretes_need < 100)
+								cigaretes_need += 1
+							if(cigaretes_need > 20)
+								if(prob(15))
+									src << "\red You want a cigaretes!"
 				if(addiction == "violence")
-					if(violence_need < 100)
-						violence_need += 1
-					if(violence_need > 20)
-						if(prob(15))
-							src << "\red <b>You want a violence!</b>"
+					if(prob(5))
+						if(prob(3))
+							if(violence_need < 100)
+								violence_need += 1
+							if(violence_need > 20)
+								if(prob(15))
+									src << "\red <b>You want a violence!</b>"
 
 
 		clamp_values()

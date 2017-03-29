@@ -74,8 +74,8 @@ Deathnettle
 
 // Sunflower
 /obj/item/weapon/grown/sunflower/attack(mob/M as mob, mob/user as mob)
-	M << "<font color_hyalor='green'><b> [user] smacks you with a sunflower!</font><font color_hyalor='yellow'><b>FLOWER POWER<b></font>"
-	user << "<font color_hyalor='green'> Your sunflower's </font><font color_hyalor='yellow'><b>FLOWER POWER</b></font><font color_hyalor='green'> strikes [M]</font>"
+	M << "<font color='green'><b> [user] smacks you with a sunflower!</font><font color='yellow'><b>FLOWER POWER<b></font>"
+	user << "<font color='green'> Your sunflower's </font><font color='yellow'><b>FLOWER POWER</b></font><font color='green'> strikes [M]</font>"
 
 // Nettle
 
@@ -115,10 +115,10 @@ Deathnettle
 	if(!..()) return
 	if(istype(M, /mob/living))
 		M << "\red You are stunned by the powerful acid of the Deathnettle!"
-		M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Had the [src.name] used on them by [user.name] ([user.ckey])</font>")
-		user.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Used the [src.name] on [M.name] ([M.ckey])</font>")
+		M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Had the [src.name] used on them by [user.name] ([user.ckey])</font>")
+		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Used the [src.name] on [M.name] ([M.ckey])</font>")
 
-		log_attack("<font color_hyalor='red'> [user.name] ([user.ckey]) used the [src.name] on [M.name] ([M.ckey])</font>")
+		log_attack("<font color='red'> [user.name] ([user.ckey]) used the [src.name] on [M.name] ([M.ckey])</font>")
 
 		M.eye_blurry += force/7
 		if(prob(20))
