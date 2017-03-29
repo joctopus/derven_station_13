@@ -22,7 +22,6 @@
 	var/obj/item/seeds/myseed = null // The currently planted seed
 
 
-
 obj/machinery/hydroponics/process()
 
 	if(myseed && !(myseed in contents))
