@@ -132,27 +132,27 @@
 			if(job.title == "Tourist")
 				continue
 			if(jobban_isbanned(M, job.title))
-				jobs += "<a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color_hyalor=red>[dd_replacetext(job.title, " ", "&nbsp")]</font></a> "
+				jobs += "<a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[dd_replacetext(job.title, " ", "&nbsp")]</font></a> "
 			else
 				jobs += "<a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[dd_replacetext(job.title, " ", "&nbsp")]</a> "
 
 /*		if(jobban_isbanned(M, "Captain")) These two are now jobs in the datums and should show up in the above code
-			jobs += "<a href='?src=\ref[src];jobban3=Captain;jobban4=\ref[M]'><font color_hyalor=red>Captain</font></a> "
+			jobs += "<a href='?src=\ref[src];jobban3=Captain;jobban4=\ref[M]'><font color=red>Captain</font></a> "
 		else
 			jobs += "<a href='?src=\ref[src];jobban3=Captain;jobban4=\ref[M]'>Captain</a> "
 
 		if(jobban_isbanned(M, "AI"))
-			jobs += "<a href='?src=\ref[src];jobban3=AI;jobban4=\ref[M]'><font color_hyalor=red>AI</font></a> "
+			jobs += "<a href='?src=\ref[src];jobban3=AI;jobban4=\ref[M]'><font color=red>AI</font></a> "
 		else
 			jobs += "<a href='?src=\ref[src];jobban3=AI;jobban4=\ref[M]'>AI</a> "
 */
 		if(jobban_isbanned(M, "Syndicate"))
-			jobs += "<BR><a href='?src=\ref[src];jobban3=Syndicate;jobban4=\ref[M]'><font color_hyalor=red>[dd_replacetext("Syndicate", " ", "&nbsp")]</font></a> "
+			jobs += "<BR><a href='?src=\ref[src];jobban3=Syndicate;jobban4=\ref[M]'><font color=red>[dd_replacetext("Syndicate", " ", "&nbsp")]</font></a> "
 		else
 			jobs += "<BR><a href='?src=\ref[src];jobban3=Syndicate;jobban4=\ref[M]'>[dd_replacetext("Syndicate", " ", "&nbsp")]</a> "
 
 		if(jobban_isbanned(M, "pAI"))
-			jobs += "<BR><a href='?src=\ref[src];jobban3=pAI;jobban4=\ref[M]'><font color_hyalor=red>pAI</font></a> "
+			jobs += "<BR><a href='?src=\ref[src];jobban3=pAI;jobban4=\ref[M]'><font color=red>pAI</font></a> "
 		else
 			jobs += "<BR><a href='?src=\ref[src];jobban3=pAI;jobban4=\ref[M]'>pAI</a> "
 
@@ -289,17 +289,17 @@
 			if(job.title == "Tourist")
 				continue
 			if(jobban_isbanned(M, job.title))
-				jobs += "<a href='?src=\ref[src];newjobban2=[job.title];jobban4=\ref[M]'><font color_hyalor=red>[dd_replacetext(job.title, " ", "&nbsp")]</font></a> "
+				jobs += "<a href='?src=\ref[src];newjobban2=[job.title];jobban4=\ref[M]'><font color=red>[dd_replacetext(job.title, " ", "&nbsp")]</font></a> "
 			else
 				jobs += "<a href='?src=\ref[src];newjobban2=[job.title];jobban4=\ref[M]'>[dd_replacetext(job.title, " ", "&nbsp")]</a> " //why doesn't this work the stupid cunt
 
 /*		if(jobban_isbanned(M, "Captain"))
-			jobs += "<a href='?src=\ref[src];newjobban2=Captain;jobban4=\ref[M]'><font color_hyalor=red>Captain</font></a> "
+			jobs += "<a href='?src=\ref[src];newjobban2=Captain;jobban4=\ref[M]'><font color=red>Captain</font></a> "
 		else
 			jobs += "<a href='?src=\ref[src];newjobban2=Captain;jobban4=\ref[M]'>Captain</a> " //why doesn't this work the stupid cunt
 */
 		if(jobban_isbanned(M, "Syndicate"))
-			jobs += "<BR><a href='?src=\ref[src];newjobban2=Syndicate;jobban4=\ref[M]'><font color_hyalor=red>[dd_replacetext("Syndicate", " ", "&nbsp")]</font></a> "
+			jobs += "<BR><a href='?src=\ref[src];newjobban2=Syndicate;jobban4=\ref[M]'><font color=red>[dd_replacetext("Syndicate", " ", "&nbsp")]</font></a> "
 		else
 			jobs += "<BR><a href='?src=\ref[src];newjobban2=Syndicate;jobban4=\ref[M]'>[dd_replacetext("Syndicate", " ", "&nbsp")]</a> " //why doesn't this work the stupid cunt
 
@@ -1596,7 +1596,7 @@
 							for(var/datum/mind/N in ticker.mode.syndicates)
 								var/mob/M = N.current
 								if(M)
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td></tr>"
 								else
 									dat += "<tr><td><i>Nuclear Operative not found!</i></td></tr>"
@@ -1622,18 +1622,18 @@
 								if(!M)
 									dat += "<tr><td><i>Head Revolutionary not found!</i></td></tr>"
 								else
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a> <b>(Leader)</b>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a> <b>(Leader)</b>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td></tr>"
 							for(var/datum/mind/N in ticker.mode.revolutionaries)
 								var/mob/M = N.current
 								if(M)
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td></tr>"
 							dat += "</table><table cellspacing=5><tr><td><B>Target(s)</B></td><td></td><td><B>Location</B></td></tr>"
 							for(var/datum/mind/N in ticker.mode.get_living_heads())
 								var/mob/M = N.current
 								if(M)
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td>"
 									var/turf/mob_loc = get_turf_loc(M)
 									dat += "<td>[mob_loc.loc]</td></tr>"
@@ -1646,7 +1646,7 @@
 							for(var/datum/mind/changeling in ticker.mode.changelings)
 								var/mob/M = changeling.current
 								if(M)
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td>"
 									dat += "<td><A HREF='?src=\ref[src];traitor=\ref[M]'>Show Objective</A></td></tr>"
 								else
@@ -1658,7 +1658,7 @@
 							for(var/datum/mind/wizard in ticker.mode.wizards)
 								var/mob/M = wizard.current
 								if(M)
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td>"
 									dat += "<td><A HREF='?src=\ref[src];traitor=\ref[M]'>Show Objective</A></td></tr>"
 								else
@@ -1670,7 +1670,7 @@
 							for(var/datum/mind/N in ticker.mode.cult)
 								var/mob/M = N.current
 								if(M)
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td></tr>"
 							dat += "</table>"
 
@@ -1679,7 +1679,7 @@
 							for(var/datum/mind/traitor in ticker.mode.traitors)
 								var/mob/M = traitor.current
 								if(M)
-									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color_hyalor=red>(DEAD)</font></b>" : ""]</td>"
+									dat += "<tr><td><a href='?src=\ref[src];adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(logged out)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 									dat += "<td><A href='?src=\ref[usr];priv_msg=\ref[M]'>PM</A></td>"
 									dat += "<td><A HREF='?src=\ref[src];traitor=\ref[M]'>Show Objective</A></td></tr>"
 								else
@@ -2194,7 +2194,7 @@
 	if(ticker.current_state == GAME_STATE_PREGAME)
 		ticker.current_state = GAME_STATE_SETTING_UP
 		log_admin("[usr.key] has started the game.")
-		message_admins("<font color_hyalor='blue'>[usr.key] has started the game.</font>")
+		message_admins("<font color='blue'>[usr.key] has started the game.</font>")
 		return 1
 	else
 		alert("Game has already started you fucking jerk, stop spamming up the chat :ARGH:")

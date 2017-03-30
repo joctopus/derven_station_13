@@ -15,11 +15,11 @@
 				if(M.gloves.cell.charge >= 2500)
 					M.gloves.cell.charge -= 2500
 					visible_message("\red <B>[src] has been touched with the stun gloves by [M]!</B>")
-					M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Stungloved [src.name] ([src.ckey])</font>")
-					src.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Has been stungloved by [M.name] ([M.ckey])</font>")
+					M.attack_log += text("\[[time_stamp()]\] <font color='red'>Stungloved [src.name] ([src.ckey])</font>")
+					src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been stungloved by [M.name] ([M.ckey])</font>")
 
 
-					log_attack("<font color_hyalor='red'>[M.name] ([M.ckey]) stungloved [src.name] ([src.ckey])</font>")
+					log_attack("<font color='red'>[M.name] ([M.ckey]) stungloved [src.name] ([src.ckey])</font>")
 
 
 					var/armorblock = run_armor_check(M.zone_sel.selecting, "energy")
@@ -75,10 +75,10 @@
 			return 1
 
 		if("hurt")
-			M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Punched [src.name] ([src.ckey])</font>")
-			src.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Has been punched by [M.name] ([M.ckey])</font>")
+			M.attack_log += text("\[[time_stamp()]\] <font color='red'>Punched [src.name] ([src.ckey])</font>")
+			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been punched by [M.name] ([M.ckey])</font>")
 
-			log_attack("<font color_hyalor='red'>[M.name] ([M.ckey]) punched [src.name] ([src.ckey])</font>")
+			log_attack("<font color='red'>[M.name] ([M.ckey]) punched [src.name] ([src.ckey])</font>")
 			if(violence_need > 1)
 				violence_need -= 20
 				if(violence_need < 0)
@@ -109,11 +109,11 @@
 
 
 		if("disarm")
-			M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Disarmed [src.name] ([src.ckey])</font>")
-			src.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Has been disarmed by [M.name] ([M.ckey])</font>")
+			M.attack_log += text("\[[time_stamp()]\] <font color='red'>Disarmed [src.name] ([src.ckey])</font>")
+			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been disarmed by [M.name] ([M.ckey])</font>")
 
 
-			log_attack("<font color_hyalor='red'>[M.name] ([M.ckey]) disarmed [src.name] ([src.ckey])</font>")
+			log_attack("<font color='red'>[M.name] ([M.ckey]) disarmed [src.name] ([src.ckey])</font>")
 
 
 			if(w_uniform)

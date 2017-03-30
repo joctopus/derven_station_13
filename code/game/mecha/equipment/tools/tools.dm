@@ -35,15 +35,15 @@
 							cargo_holder.cargo += O
 							O.loc = chassis
 							O.anchored = 0
-							chassis.occupant_message("<font color_hyalor='blue'>[target] succesfully loaded.</font>")
+							chassis.occupant_message("<font color='blue'>[target] succesfully loaded.</font>")
 							chassis.log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
 						else
-							chassis.occupant_message("<font color_hyalor='red'>You must hold still while handling objects.</font>")
+							chassis.occupant_message("<font color='red'>You must hold still while handling objects.</font>")
 							O.anchored = initial(O.anchored)
 				else
-					chassis.occupant_message("<font color_hyalor='red'>Not enough room in cargo compartment.</font>")
+					chassis.occupant_message("<font color='red'>Not enough room in cargo compartment.</font>")
 			else
-				chassis.occupant_message("<font color_hyalor='red'>[target] is firmly secured.</font>")
+				chassis.occupant_message("<font color='red'>[target] is firmly secured.</font>")
 
 		else if(istype(target,/mob/living))
 			var/mob/living/M = target
@@ -75,14 +75,14 @@
 		if(!action_checks(target)) return
 		set_ready_state(0)
 		chassis.use_power(energy_drain)
-		chassis.visible_message("<font color_hyalor='red'><b>[chassis] starts to drill [target]</b></font>", "You hear the drill.")
-		chassis.occupant_message("<font color_hyalor='red'><b>You start to drill [target]</b></font>")
+		chassis.visible_message("<font color='red'><b>[chassis] starts to drill [target]</b></font>", "You hear the drill.")
+		chassis.occupant_message("<font color='red'><b>You start to drill [target]</b></font>")
 		var/T = chassis.loc
 		var/C = target.loc	//why are these backwards? we may never know -Pete
 		if(do_after_cooldown(target))
 			if(T == chassis.loc && src == chassis.selected)
 				if(istype(target, /turf/simulated/wall/r_wall))
-					chassis.occupant_message("<font color_hyalor='red'>[target] is too durable to drill through.</font>")
+					chassis.occupant_message("<font color='red'>[target] is too durable to drill through.</font>")
 				else if(istype(target, /turf/simulated/mineral))
 					for(var/turf/simulated/mineral/M in range(chassis,1))
 						if(get_dir(chassis,M)&chassis.dir)
@@ -454,8 +454,8 @@
 			user << "\red The [W] bounces off [chassis] armor."
 			chassis.log_append_to_last("Armor saved.")
 		else
-			chassis.occupant_message("<font color_hyalor='red'><b>[user] hits [chassis] with [W].</b></font>")
-			user.visible_message("<font color_hyalor='red'><b>[user] hits [chassis] with [W].</b></font>", "<font color_hyalor='red'><b>You hit [src] with [W].</b></font>")
+			chassis.occupant_message("<font color='red'><b>[user] hits [chassis] with [W].</b></font>")
+			user.visible_message("<font color='red'><b>[user] hits [chassis] with [W].</b></font>", "<font color='red'><b>You hit [src] with [W].</b></font>")
 			chassis.take_damage(round(W.force*damage_coeff),W.damtype)
 			chassis.check_for_internal_damage(list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST))
 		set_ready_state(0)
@@ -788,7 +788,7 @@
 			var/result = load_fuel(target)
 			var/message
 			if(isnull(result))
-				message = "<font color_hyalor='red'>Plasma traces in target minimal. [target] cannot be used as fuel.</font>"
+				message = "<font color='red'>Plasma traces in target minimal. [target] cannot be used as fuel.</font>"
 			else if(!result)
 				message = "Unit is full."
 			else
@@ -813,7 +813,7 @@
 	attackby(weapon,mob/user)
 		var/result = load_fuel(weapon)
 		if(isnull(result))
-			user.visible_message("[user] tries to shove [weapon] into [src]. What a dumb-ass.","<font color_hyalor='red'>Plasma traces minimal. [weapon] cannot be used as fuel.</font>")
+			user.visible_message("[user] tries to shove [weapon] into [src]. What a dumb-ass.","<font color='red'>Plasma traces minimal. [weapon] cannot be used as fuel.</font>")
 		else if(!result)
 			user << "Unit is full."
 		else
@@ -927,7 +927,7 @@
 			if(chassis.loc!=C || target.loc!=T)
 				return
 			if(occupant)
-				chassis.occupant_message("<font color_hyalor=\"red\"><B>The sleeper is already occupied!</B></font>")
+				chassis.occupant_message("<font color=\"red\"><B>The sleeper is already occupied!</B></font>")
 				return
 			target.forceMove(src)
 			occupant = target
@@ -939,7 +939,7 @@
 			*/
 			set_ready_state(0)
 			pr_mech_sleeper.start()
-			chassis.occupant_message("<font color_hyalor='blue'>[target] successfully loaded into [src]. Life support functions engaged.</font>")
+			chassis.occupant_message("<font color='blue'>[target] successfully loaded into [src]. Life support functions engaged.</font>")
 			chassis.visible_message("[chassis] loads [target] into the [src].")
 			chassis.log_message("[src]: [target] loaded. Life support functions engaged.")
 		return
@@ -1027,12 +1027,12 @@
 				t1 = "*dead*"
 			else
 				t1 = "Unknown"
-		return {"<font color_hyalor="[occupant.health > 50 ? "blue" : "red"]"><b>Health:</b> [occupant.health]% ([t1])</font><br />
-					<font color_hyalor="[occupant.bodytemperature > 50 ? "blue" : "red"]"><b>Core Temperature:</b> [src.occupant.bodytemperature-T0C]&deg;C ([src.occupant.bodytemperature*1.8-459.67]&deg;F)</font><br />
-					<font color_hyalor="[occupant.getBruteLoss() < 60 ? "blue" : "red"]"><b>Brute Damage:</b> [occupant.getBruteLoss()]%</font><br />
-					<font color_hyalor="[occupant.getOxyLoss() < 60 ? "blue" : "red"]"><b>Respiratory Damage:</b> [occupant.getOxyLoss()]%</font><br />
-					<font color_hyalor="[occupant.getToxLoss() < 60 ? "blue" : "red"]"><b>Toxin Content:</b> [occupant.getToxLoss()]%</font><br />
-					<font color_hyalor="[occupant.getFireLoss() < 60 ? "blue" : "red"]"><b>Burn Severity:</b> [occupant.getFireLoss()]%</font><br />
+		return {"<font color="[occupant.health > 50 ? "blue" : "red"]"><b>Health:</b> [occupant.health]% ([t1])</font><br />
+					<font color="[occupant.bodytemperature > 50 ? "blue" : "red"]"><b>Core Temperature:</b> [src.occupant.bodytemperature-T0C]&deg;C ([src.occupant.bodytemperature*1.8-459.67]&deg;F)</font><br />
+					<font color="[occupant.getBruteLoss() < 60 ? "blue" : "red"]"><b>Brute Damage:</b> [occupant.getBruteLoss()]%</font><br />
+					<font color="[occupant.getOxyLoss() < 60 ? "blue" : "red"]"><b>Respiratory Damage:</b> [occupant.getOxyLoss()]%</font><br />
+					<font color="[occupant.getToxLoss() < 60 ? "blue" : "red"]"><b>Toxin Content:</b> [occupant.getToxLoss()]%</font><br />
+					<font color="[occupant.getFireLoss() < 60 ? "blue" : "red"]"><b>Burn Severity:</b> [occupant.getFireLoss()]%</font><br />
 					"}
 
 	proc/get_occupant_reagents()
@@ -1136,7 +1136,7 @@
 		var/result = load_cable(target)
 		var/message
 		if(isnull(result))
-			message = "<font color_hyalor='red'>Unable to load [target] - no cable found.</font>"
+			message = "<font color='red'>Unable to load [target] - no cable found.</font>"
 		else if(!result)
 			message = "Reel is full."
 		else

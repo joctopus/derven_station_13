@@ -35,11 +35,11 @@
 	if(overload)
 		overload = 0
 		step_in = initial(step_in)
-		src.occupant_message("<font color_hyalor='blue'>You disable leg actuators overload.</font>")
+		src.occupant_message("<font color='blue'>You disable leg actuators overload.</font>")
 	else
 		overload = 1
 		step_in = min(1, round(step_in/2))
-		src.occupant_message("<font color_hyalor='red'>You enable leg actuators overload.</font>")
+		src.occupant_message("<font color='red'>You enable leg actuators overload.</font>")
 	src.log_message("Toggled leg actuators overload.")
 	return
 
@@ -53,7 +53,7 @@
 		if(health < initial(health) - initial(health)/3)
 			overload = 0
 			step_in = initial(step_in)
-			src.occupant_message("<font color_hyalor='red'>Leg actuators damage threshold exceded. Disabling overload.</font>")
+			src.occupant_message("<font color='red'>Leg actuators damage threshold exceded. Disabling overload.</font>")
 	return
 
 

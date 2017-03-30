@@ -80,7 +80,7 @@
 	user.machine = src
 	var/dat = "<TITLE>Biogenerator</TITLE>Biogenerator:<BR>"
 	if (processing)
-		dat += "<FONT color_hyalor=red>Biogenerator is processing! Please wait...</FONT>"
+		dat += "<font color=red>Biogenerator is processing! Please wait...</FONT>"
 	else
 		dat += "Biomass: [points] points.<HR>"
 		switch(menustat)
@@ -89,16 +89,16 @@
 					dat += "<A href='?src=\ref[src];action=activate'>Activate Biogenerator!</A><BR>"
 					dat += "<A href='?src=\ref[src];action=detach'>Detach Container</A><BR><BR>"
 					dat += "Food<BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=milk;cost=20'>10 milk</A> <FONT color_hyalor=blue>(20)</FONT><BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=meat;cost=50'>Slab of meat</A> <FONT color_hyalor=blue>(50)</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=milk;cost=20'>10 milk</A> <font color=blue>(20)</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=meat;cost=50'>Slab of meat</A> <font color=blue>(50)</FONT><BR>"
 					dat += "Nutrient<BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=ez;cost=10'>E-Z-Nutrient</A> <FONT color_hyalor=blue>(10)</FONT><BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=l4z;cost=20'>Left 4 Zed</A> <FONT color_hyalor=blue>(20)</FONT><BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=rh;cost=25'>Robust Harvest</A> <FONT color_hyalor=blue>(25)</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=ez;cost=10'>E-Z-Nutrient</A> <font color=blue>(10)</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=l4z;cost=20'>Left 4 Zed</A> <font color=blue>(20)</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=rh;cost=25'>Robust Harvest</A> <font color=blue>(25)</FONT><BR>"
 					//dat += "Other<BR>"
-					//dat += "<A href='?src=\ref[src];action=create;item=monkey;cost=500'>Monkey</A> <FONT color_hyalor=blue>(500)</FONT><BR>"
+					//dat += "<A href='?src=\ref[src];action=create;item=monkey;cost=500'>Monkey</A> <font color=blue>(500)</FONT><BR>"
 				else
-					dat += "<BR><FONT color_hyalor=red>No beaker inside. Please insert a beaker.</FONT><BR>"
+					dat += "<BR><font color=red>No beaker inside. Please insert a beaker.</FONT><BR>"
 			if("nopoints")
 				dat += "You do not have biomass to create products.<BR>Please, put growns into reactor and activate it.<BR>"
 				dat += "<A href='?src=\ref[src];action=menu'>Return to menu</A>"
@@ -106,7 +106,7 @@
 				dat += "Operation complete.<BR>"
 				dat += "<A href='?src=\ref[src];action=menu'>Return to menu</A>"
 			if("void")
-				dat += "<FONT color_hyalor=red>Error: No growns inside.</FONT><BR>Please, put growns into reactor.<BR>"
+				dat += "<font color=red>Error: No growns inside.</FONT><BR>Please, put growns into reactor.<BR>"
 				dat += "<A href='?src=\ref[src];action=menu'>Return to menu</A>"
 	user << browse(dat, "window=biogenerator")
 	onclose(user, "biogenerator")

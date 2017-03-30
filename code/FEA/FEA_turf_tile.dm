@@ -139,17 +139,6 @@ turf
 
 		New()
 			..()
-
-			if(density == 0)
-				if(prob(15))
-					new /obj/effect/decal/cleanable/dirt(src)
-
-				if(prob(2))
-					new /obj/effect/decal/cleanable/vomit(src)
-
-				if(prob(5))
-					new /obj/effect/decal/cleanable/oil(src)
-
 			if(!blocks_air)
 				air = new
 

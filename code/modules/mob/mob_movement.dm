@@ -149,6 +149,8 @@
 
 	if(!mob)	return
 
+	if(mob.resting == 1) return
+
 	if(mob.stat==2)	return
 
 	if(isAI(mob))	return AIMove(n,direct,mob)

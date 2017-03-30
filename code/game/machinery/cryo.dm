@@ -71,26 +71,26 @@
 		var/temp_text = ""
 		if(src.occupant)
 			if(src.occupant.health <= -100)
-				health_text = "<FONT color_hyalor=red>Dead</FONT>"
+				health_text = "<font color=red>Dead</FONT>"
 			else if(src.occupant.health < 0)
-				health_text = "<FONT color_hyalor=red>[round(src.occupant.health,0.1)]</FONT>"
+				health_text = "<font color=red>[round(src.occupant.health,0.1)]</FONT>"
 			else
 				health_text = "[round(src.occupant.health,0.1)]"
 		if(air_contents.temperature > T0C)
-			temp_text = "<FONT color_hyalor=red>[air_contents.temperature]</FONT>"
+			temp_text = "<font color=red>[air_contents.temperature]</FONT>"
 		else if(air_contents.temperature > 225)
-			temp_text = "<FONT color_hyalor=black>[air_contents.temperature]</FONT>"
+			temp_text = "<font color=black>[air_contents.temperature]</FONT>"
 		else
-			temp_text = "<FONT color_hyalor=blue>[air_contents.temperature]</FONT>"
+			temp_text = "<font color=blue>[air_contents.temperature]</FONT>"
 		if(src.beaker)
 			beaker_text = "<B>Beaker:</B> <A href='?src=\ref[src];eject=1'>Eject</A>"
 		else
-			beaker_text = "<B>Beaker:</B> <FONT color_hyalor=red>No beaker loaded</FONT>"
+			beaker_text = "<B>Beaker:</B> <font color=red>No beaker loaded</FONT>"
 		var/dat = {"<B>Cryo cell control system</B><BR>
 			<B>Current cell temperature:</B> [temp_text]K<BR>
 			<B>Cryo status:</B> [ src.on ? "<A href='?src=\ref[src];start=1'>Off</A> <B>On</B>" : "<B>Off</B> <A href='?src=\ref[src];start=1'>On</A>"]<BR>
 			[beaker_text]<BR><BR>
-			<B>Current occupant:</B> [src.occupant ? "<BR>Name: [src.occupant]<BR>Health: [health_text]<BR>Oxygen deprivation: [round(src.occupant.getOxyLoss(),0.1)]<BR>Brute damage: [round(src.occupant.getBruteLoss(),0.1)]<BR>Fire damage: [round(src.occupant.getFireLoss(),0.1)]<BR>Toxin damage: [round(src.occupant.getToxLoss(),0.1)]<BR>Body temperature: [src.occupant.bodytemperature]" : "<FONT color_hyalor=red>None</FONT>"]<BR>
+			<B>Current occupant:</B> [src.occupant ? "<BR>Name: [src.occupant]<BR>Health: [health_text]<BR>Oxygen deprivation: [round(src.occupant.getOxyLoss(),0.1)]<BR>Brute damage: [round(src.occupant.getBruteLoss(),0.1)]<BR>Fire damage: [round(src.occupant.getFireLoss(),0.1)]<BR>Toxin damage: [round(src.occupant.getToxLoss(),0.1)]<BR>Body temperature: [src.occupant.bodytemperature]" : "<font color=red>None</FONT>"]<BR>
 
 		"}
 		user.machine = src

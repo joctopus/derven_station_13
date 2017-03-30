@@ -48,10 +48,10 @@
 			return
 		if (istype(M, /mob/living/carbon/human))
 			if(!M.handcuffed)
-				M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Has been handcuffed (attempt) by [user.name] ([user.ckey])</font>")
-				user.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Attempted to handcuff [M.name] ([M.ckey])</font>")
+				M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been handcuffed (attempt) by [user.name] ([user.ckey])</font>")
+				user.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to handcuff [M.name] ([M.ckey])</font>")
 
-				log_attack("<font color_hyalor='red'>[user.name] ([user.ckey]) Attempted to handcuff [M.name] ([M.ckey])</font>")
+				log_attack("<font color='red'>[user.name] ([user.ckey]) Attempted to handcuff [M.name] ([M.ckey])</font>")
 
 				var/obj/effect/equip_e/human/O = new /obj/effect/equip_e/human(  )
 				O.source = user
@@ -173,10 +173,10 @@
 		return
 	user << "\red You stab [M] with the pen."
 	M << "\red You feel a tiny prick!"
-	M.attack_log += text("\[[time_stamp()]\] <font color_hyalor='orange'>Has been stabbed with [src.name]  by [user.name] ([user.ckey])</font>")
-	user.attack_log += text("\[[time_stamp()]\] <font color_hyalor='red'>Used the [src.name] to stab [M.name] ([M.ckey])</font>")
+	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been stabbed with [src.name]  by [user.name] ([user.ckey])</font>")
+	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Used the [src.name] to stab [M.name] ([M.ckey])</font>")
 
-	log_attack("<font color_hyalor='red'>[user.name] ([user.ckey]) Used the [src.name] to stab [M.name] ([M.ckey])</font>")
+	log_attack("<font color='red'>[user.name] ([user.ckey]) Used the [src.name] to stab [M.name] ([M.ckey])</font>")
 
 
 	return

@@ -86,5 +86,5 @@
 	if (href_list["phasing"])
 		phasing = !phasing
 		send_byjax(src.occupant,"exosuit.browser","phasing_command","[phasing?"Dis":"En"]able phasing")
-		src.occupant_message("<font color_hyalor=\"[phasing?"#00f\">En":"#f00\">Dis"]abled phasing.</font>")
+		src.occupant_message("<font color=\"[phasing?"#00f\">En":"#f00\">Dis"]abled phasing.</font>")
 	return

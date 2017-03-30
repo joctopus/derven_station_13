@@ -479,7 +479,7 @@
 	var/output = "<b>Air Status:</b><br>"
 
 	if(total == 0)
-		output +={"<font color_hyalor='red'><b>Warning: Cannot obtain air sample for analysis.</b></font>"}
+		output +={"<font color='red'><b>Warning: Cannot obtain air sample for analysis.</b></font>"}
 		return output
 
 	output += {"
@@ -572,9 +572,9 @@ Temperature: <span class='dl[temperature_dangerlevel]'>[environment.temperature]
 <HR>
 "}
 			if (mode==AALARM_MODE_PANIC)
-				output += "<font color_hyalor='red'><B>PANIC SYPHON ACTIVE</B></font><br><A href='?src=\ref[src];mode=[AALARM_MODE_OFF]'>turn syphoning off</A>"
+				output += "<font color='red'><B>PANIC SYPHON ACTIVE</B></font><br><A href='?src=\ref[src];mode=[AALARM_MODE_OFF]'>turn syphoning off</A>"
 			else
-				output += "<A href='?src=\ref[src];mode=[AALARM_MODE_PANIC]'><font color_hyalor='red'><B>ACTIVATE PANIC SYPHON IN AREA</B></font></A>"
+				output += "<A href='?src=\ref[src];mode=[AALARM_MODE_PANIC]'><font color='red'><B>ACTIVATE PANIC SYPHON IN AREA</B></font></A>"
 		if (AALARM_SCREEN_VENT)
 			var/sensor_data = ""
 			if(alarm_area.air_vent_names.len)
@@ -583,10 +583,10 @@ Temperature: <span class='dl[temperature_dangerlevel]'>[environment.temperature]
 					var/list/data = alarm_area.air_vent_info[id_tag]
 					var/state = ""
 					if(!data)
-						state = "<font color_hyalor='red'> can not be found!</font>"
+						state = "<font color='red'> can not be found!</font>"
 						data = list("external" = 0) //for "0" instead of empty string
 					else if (data["timestamp"]+AALARM_REPORT_TIMEOUT < world.time)
-						state = "<font color_hyalor='red'> not responding!</font>"
+						state = "<font color='red'> not responding!</font>"
 					sensor_data += {"
 <B>[long_name]</B>[state]<BR>
 <B>Operating:</B>
@@ -626,10 +626,10 @@ siphoning
 					var/list/data = alarm_area.air_scrub_info[id_tag]
 					var/state = ""
 					if(!data)
-						state = "<font color_hyalor='red'> can not be found!</font>"
+						state = "<font color='red'> can not be found!</font>"
 						data = list("external" = 0) //for "0" instead of empty string
 					else if (data["timestamp"]+AALARM_REPORT_TIMEOUT < world.time)
-						state = "<font color_hyalor='red'> not responding!</font>"
+						state = "<font color='red'> not responding!</font>"
 
 					sensor_data += {"
 <B>[long_name]</B>[state]<BR>
@@ -651,8 +651,8 @@ Nitrous Oxide
 <BR>
 "}
 					sensor_data += {"
-<B>Panic syphon:</B> [data["panic"]?"<font color_hyalor='red'><B>PANIC SYPHON ACTIVATED</B></font>":""]
-<A href='?src=\ref[src];id_tag=[id_tag];command=panic_siphon;val=[!data["panic"]]'><font color_hyalor='[(data["panic"]?"blue'>Dea":"red'>A")]ctivate</font></A><BR>
+<B>Panic syphon:</B> [data["panic"]?"<font color='red'><B>PANIC SYPHON ACTIVATED</B></font>":""]
+<A href='?src=\ref[src];id_tag=[id_tag];command=panic_siphon;val=[!data["panic"]]'><font color='[(data["panic"]?"blue'>Dea":"red'>A")]ctivate</font></A><BR>
 <HR>
 "}
 			else
@@ -666,8 +666,8 @@ Nitrous Oxide
 			var/list/modes = list(
 				AALARM_MODE_SCRUBBING   = "Filtering",
 				AALARM_MODE_VENTING     = "Draught",
-				AALARM_MODE_PANIC       = "<font color_hyalor='red'>PANIC</font>",
-				AALARM_MODE_REPLACEMENT = "<font color_hyalor='red'>REPLACE AIR</font>",
+				AALARM_MODE_PANIC       = "<font color='red'>PANIC</font>",
+				AALARM_MODE_REPLACEMENT = "<font color='red'>REPLACE AIR</font>",
 				AALARM_MODE_OFF         = "Off",
 			)
 			for (var/m=1,m<=modes.len,m++)

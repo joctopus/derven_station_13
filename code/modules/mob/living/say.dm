@@ -228,7 +228,7 @@
 			if(src.changeling)
 				for(var/mob/aChangeling in world)
 					if(aChangeling.changeling || istype(aChangeling, /mob/dead/observer))
-						aChangeling << "<i><font color_hyalor=#800080><b>[gender=="male"?"Mr.":"Mrs."] [changeling.changelingID]:</b> [message]</font></i>"
+						aChangeling << "<i><font color=#800080><b>[gender=="male"?"Mr.":"Mrs."] [changeling.changelingID]:</b> [message]</font></i>"
 				return
 ////SPECIAL HEADSETS START
 		else

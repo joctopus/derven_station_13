@@ -59,44 +59,46 @@
 		SV.master = src
 
 	process()
-		if(!vines)
-			del(src) //Kudzu exterminated
-			return
-		if(!growth_queue)
-			del(src) //Sanity check
-			return
-		if(vines.len >= 250 && !reached_collapse_size)
-			reached_collapse_size = 1
-		if(vines.len >= 30 && !reached_slowdown_size )
-			reached_slowdown_size = 1
+		spawn(25)
+			if(prob(10))
+				if(!vines)
+					del(src) //Kudzu exterminated
+					return
+				if(!growth_queue)
+					del(src) //Sanity check
+					return
+				if(vines.len >= 250 && !reached_collapse_size)
+					reached_collapse_size = 1
+				if(vines.len >= 30 && !reached_slowdown_size )
+					reached_slowdown_size = 1
 
-		var/length = 0
-		if(reached_collapse_size)
-			length = 0
-		else if(reached_slowdown_size)
-			if(prob(25))
-				length = 1
-			else
-				length = 0
-		else
-			length = 1
-		length = min( 30 , max( length , vines.len / 5 ) )
-		var/i = 0
-		var/list/obj/effect/spacevine/queue_end = list()
+				var/length = 0
+				if(reached_collapse_size)
+					length = 0
+				else if(reached_slowdown_size)
+					if(prob(25))
+						length = 1
+					else
+						length = 0
+				else
+					length = 1
+				length = min( 30 , max( length , vines.len / 5 ) )
+				var/i = 0
+				var/list/obj/effect/spacevine/queue_end = list()
 
-		for( var/obj/effect/spacevine/SV in growth_queue )
-			i++
-			queue_end += SV
-			growth_queue -= SV
-			if(SV.energy < 2)
-				if(prob(10))
-					SV.grow()
-			//if(prob(25))
-			SV.spread()
-			if(i >= length)
-				break
+				for( var/obj/effect/spacevine/SV in growth_queue )
+					i++
+					queue_end += SV
+					growth_queue -= SV
+					if(SV.energy < 2)
+						if(prob(10))
+							SV.grow()
+					//if(prob(25))
+					SV.spread()
+					if(i >= length)
+						break
 
-		growth_queue = growth_queue + queue_end
+				growth_queue = growth_queue + queue_end
 
 		//sleep(5)
 		//src.process()

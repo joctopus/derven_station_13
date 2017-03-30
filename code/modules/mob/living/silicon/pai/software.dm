@@ -32,7 +32,7 @@
 	if(temp)
 		left_part = temp
 	else if(src.stat == 2)						// Show some flavor text if the pAI is dead
-		left_part = "<b><font color_hyalor=red>ÈRrÖR Ða†Ä ÇÖRrÚþ†Ìoñ</font></b>"
+		left_part = "<b><font color=red>ÈRrÖR Ða†Ä ÇÖRrÚþ†Ìoñ</font></b>"
 		right_part = "<pre>Program index hash not found</pre>"
 
 	else
@@ -302,7 +302,7 @@
 		if(s == "medical HUD")
 			dat += "<a href='byond://?src=\ref[src];software=medicalhud;sub=0'>Medical Analysis Suite</a> <br>"
 		if(s == "universal translator")
-			dat += "<a href='byond://?src=\ref[src];software=translator;sub=0'>Universal Translator</a>[(src.universal_speak) ? "<font color_hyalor=#55FF55>•</font>" : "<font color_hyalor=#FF5555>•</font>"] <br>"
+			dat += "<a href='byond://?src=\ref[src];software=translator;sub=0'>Universal Translator</a>[(src.universal_speak) ? "<font color=#55FF55>•</font>" : "<font color=#FF5555>•</font>"] <br>"
 		if(s == "projection array")
 			dat += "<a href='byond://?src=\ref[src];software=projectionarray;sub=0'>Projection Array</a> <br>"
 		if(s == "camera jack")
@@ -364,7 +364,7 @@
 		for (var/mob/v in viewers(T))
 			v.show_message("\blue [M] presses \his thumb against [P].", 3, "\blue [P] makes a sharp clicking sound as it extracts DNA material from [M].", 2)
 		var/datum/dna/dna = M.dna
-		P << "<font color_hyalor = red><h3>[M]'s UE string : [dna.unique_enzymes]</h3></font>"
+		P << "<font color = red><h3>[M]'s UE string : [dna.unique_enzymes]</h3></font>"
 		if(dna.unique_enzymes == P.master_dna)
 			P << "<b>DNA is a match to stored Master DNA.</b>"
 		else
@@ -428,7 +428,7 @@
 /mob/living/silicon/pai/proc/softwareTranslator()
 	var/dat = {"<h3>Universal Translator</h3><br>
 				When enabled, this device will automatically convert all spoken and written language into a format that any known recipient can understand.<br><br>
-				The device is currently [ (src.universal_speak) ? "<font color_hyalor=#55FF55>en" : "<font color_hyalor=#FF5555>dis" ]abled.</font><br>
+				The device is currently [ (src.universal_speak) ? "<font color=#55FF55>en" : "<font color=#FF5555>dis" ]abled.</font><br>
 				<a href='byond://?src=\ref[src];software=translator;sub=0;toggle=1'>Toggle Device</a><br>
 				"}
 	return dat
@@ -437,7 +437,7 @@
 /mob/living/silicon/pai/proc/facialRecognition()
 	var/dat = {"<h3>Facial Recognition Suite</h3><br>
 				When enabled, this package will scan all viewable faces and compare them against the known criminal database, providing real-time graphical data about any detected persons of interest.<br><br>
-				The package is currently [ (src.secHUD) ? "<font color_hyalor=#55FF55>en" : "<font color_hyalor=#FF5555>dis" ]abled.</font><br>
+				The package is currently [ (src.secHUD) ? "<font color=#55FF55>en" : "<font color=#FF5555>dis" ]abled.</font><br>
 				<a href='byond://?src=\ref[src];software=securityhud;sub=0;toggle=1'>Toggle Package</a><br>
 				"}
 	return dat
@@ -449,7 +449,7 @@
 		dat += {"<h3>Medical Analysis Suite</h3><br>
 				 <h4>Visual Status Overlay</h4><br>
 					When enabled, this package will scan all nearby crewmembers' vitals and provide real-time graphical data about their state of health.<br><br>
-					The suite is currently [ (src.medHUD) ? "<font color_hyalor=#55FF55>en" : "<font color_hyalor=#FF5555>dis" ]abled.</font><br>
+					The suite is currently [ (src.medHUD) ? "<font color=#55FF55>en" : "<font color=#FF5555>dis" ]abled.</font><br>
 					<a href='byond://?src=\ref[src];software=medicalhud;sub=0;toggle=1'>Toggle Suite</a><br>
 					<br>
 					<a href='byond://?src=\ref[src];software=medicalhud;sub=1'>Host Bioscan</a><br>
@@ -469,10 +469,10 @@
 		dat += {"Bioscan Results for [M]: <br>"
 		Overall Status: [M.stat > 1 ? "dead" : "[M.health]% healthy"] <br>
 		Scan Breakdown: <br>
-		Respiratory: [M.getOxyLoss() > 50 ? "<font color_hyalor=#FF5555>" : "<font color_hyalor=#55FF55>"][M.getOxyLoss()]</font><br>
-		Toxicology: [M.getToxLoss() > 50 ? "<font color_hyalor=#FF5555>" : "<font color_hyalor=#55FF55>"][M.getToxLoss()]</font><br>
-		Burns: [M.getFireLoss() > 50 ? "<font color_hyalor=#FF5555>" : "<font color_hyalor=#55FF55>"][M.getFireLoss()]</font><br>
-		Structural Integrity: [M.getBruteLoss() > 50 ? "<font color_hyalor=#FF5555>" : "<font color_hyalor=#55FF55>"][M.getBruteLoss()]</font><br>
+		Respiratory: [M.getOxyLoss() > 50 ? "<font color=#FF5555>" : "<font color=#55FF55>"][M.getOxyLoss()]</font><br>
+		Toxicology: [M.getToxLoss() > 50 ? "<font color=#FF5555>" : "<font color=#55FF55>"][M.getToxLoss()]</font><br>
+		Burns: [M.getFireLoss() > 50 ? "<font color=#FF5555>" : "<font color=#55FF55>"][M.getFireLoss()]</font><br>
+		Structural Integrity: [M.getBruteLoss() > 50 ? "<font color=#FF5555>" : "<font color=#55FF55>"][M.getBruteLoss()]</font><br>
 		Body Temperature: [M.bodytemperature-T0C]&deg;C ([M.bodytemperature*1.8-459.67]&deg;F)<br>
 		"}
 		for(var/datum/disease/D in M.viruses)
@@ -523,14 +523,14 @@
 	dat += "Cable status : "
 
 	if(!src.cable)
-		dat += "<font color_hyalor=#FF5555>Retracted</font> <br>"
+		dat += "<font color=#FF5555>Retracted</font> <br>"
 		return dat
 	if(!src.cable.machine)
-		dat += "<font color_hyalor=#FFFF55>Extended</font> <br>"
+		dat += "<font color=#FFFF55>Extended</font> <br>"
 		return dat
 
 	var/obj/machinery/machine = src.cable.machine
-	dat += "<font color_hyalor=#55FF55>Connected</font> <br>"
+	dat += "<font color=#55FF55>Connected</font> <br>"
 
 	if(!istype(machine, /obj/machinery/camera))
 		src << "DERP"
@@ -541,15 +541,15 @@
 	var/dat = "<h3>Airlock Jack</h3>"
 	dat += "Cable status : "
 	if(!src.cable)
-		dat += "<font color_hyalor=#FF5555>Retracted</font> <br>"
+		dat += "<font color=#FF5555>Retracted</font> <br>"
 		dat += "<a href='byond://?src=\ref[src];software=doorjack;cable=1;sub=0'>Extend Cable</a> <br>"
 		return dat
 	if(!src.cable.machine)
-		dat += "<font color_hyalor=#FFFF55>Extended</font> <br>"
+		dat += "<font color=#FFFF55>Extended</font> <br>"
 		return dat
 
 	var/obj/machinery/machine = src.cable.machine
-	dat += "<font color_hyalor=#55FF55>Connected</font> <br>"
+	dat += "<font color=#55FF55>Connected</font> <br>"
 	if(!istype(machine, /obj/machinery/door))
 		dat += "Connected device's firmware does not appear to be compatible with Airlock Jack protocols.<br>"
 		return dat
@@ -569,9 +569,9 @@
 	var/turf/T = get_turf_or_move(src.loc)
 	for(var/mob/living/silicon/ai/AI in world)
 		if(T.loc)
-			AI << "<font color_hyalor = red><b>Network Alert: Brute-force encryption crack in progress in [T.loc].</b></font>"
+			AI << "<font color = red><b>Network Alert: Brute-force encryption crack in progress in [T.loc].</b></font>"
 		else
-			AI << "<font color_hyalor = red><b>Network Alert: Brute-force encryption crack in progress. Unable to pinpoint location.</b></font>"
+			AI << "<font color = red><b>Network Alert: Brute-force encryption crack in progress. Unable to pinpoint location.</b></font>"
 	while(src.hackprogress < 100)
 		if(src.cable && src.cable.machine && istype(src.cable.machine, /obj/machinery/door) && src.cable.machine == src.hackdoor && get_dist(src, src.hackdoor) <= 1)
 			hackprogress += rand(1, 10)

@@ -191,7 +191,7 @@
 				ready = 0
 		if(href_list["addiction"] == "input")
 			preferences.addiction = input("Select a addiction for your character.",
-			"Your addiction", preferences.addiction) in list("alcohol","cigaretes","violence")
+			"Your addiction", preferences.addiction) in list("alcohol","cigaretes","violence", "no")
 
 		if(href_list["refresh"])
 			src << browse(null, "window=playersetup") //closes the player setup window

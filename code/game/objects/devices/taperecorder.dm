@@ -104,7 +104,7 @@
 		src.playing = 0
 		var/turf/T = get_turf(src)
 		for(var/mob/O in hearers(world.view-1, T))
-			O.show_message("<font color_hyalor=Maroon><B>Tape Recorder</B>: Playback stopped.</font>",2)
+			O.show_message("<font color=Maroon><B>Tape Recorder</B>: Playback stopped.</font>",2)
 		src.icon_state = "taperecorderidle"
 		return
 	else
@@ -156,20 +156,20 @@
 			break
 		var/turf/T = get_turf(src)
 		for(var/mob/O in hearers(world.view-1, T))
-			O.show_message("<font color_hyalor=Maroon><B>Tape Recorder</B>: [src.storedinfo[i]]</font>",2)
+			O.show_message("<font color=Maroon><B>Tape Recorder</B>: [src.storedinfo[i]]</font>",2)
 		if (src.storedinfo.len < i+1)
 			src.playsleepseconds = 1
 			sleep(10)
 			T = get_turf(src)
 			for(var/mob/O in hearers(world.view-1, T))
-				O.show_message("<font color_hyalor=Maroon><B>Tape Recorder</B>: End of recording.</font>",2)
+				O.show_message("<font color=Maroon><B>Tape Recorder</B>: End of recording.</font>",2)
 		else
 			src.playsleepseconds = src.timestamp[i+1] - src.timestamp[i]
 		if (src.playsleepseconds > 19)
 			sleep(10)
 			T = get_turf(src)
 			for(var/mob/O in hearers(world.view-1, T))
-				O.show_message("<font color_hyalor=Maroon><B>Tape Recorder</B>: Skipping [src.playsleepseconds] seconds of silence</font>",2)
+				O.show_message("<font color=Maroon><B>Tape Recorder</B>: Skipping [src.playsleepseconds] seconds of silence</font>",2)
 			src.playsleepseconds = 1
 		i++
 	src.icon_state = "taperecorderidle"
@@ -248,7 +248,7 @@
 			src.playing = 0
 			var/turf/T = get_turf(src)
 			for(var/mob/O in hearers(world.view-1, T))
-				O.show_message("<font color_hyalor=Maroon><B>Tape Recorder</B>: Playback stopped.</font>",2)
+				O.show_message("<font color=Maroon><B>Tape Recorder</B>: Playback stopped.</font>",2)
 			src.icon_state = "taperecorderidle"
 			return
 		else

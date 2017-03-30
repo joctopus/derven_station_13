@@ -511,8 +511,8 @@
 	if(locked && (!istype(user, /mob/living/silicon)))
 		t += "<I>(Swipe ID card to unlock inteface.)</I><BR>"
 		t += "Main breaker : <B>[operating ? "On" : "Off"]</B><BR>"
-		t += "External power : <B>[ main_status ? (main_status ==2 ? "<FONT color_hyalor=#004000>Good</FONT>" : "<FONT color_hyalor=#D09000>Low</FONT>") : "<FONT color_hyalor=#F00000>None</FONT>"]</B><BR>"
-		t += "Power cell: <B>[cell ? "[round(cell.percent())]%" : "<FONT color_hyalor=red>Not connected.</FONT>"]</B>"
+		t += "External power : <B>[ main_status ? (main_status ==2 ? "<font color=#004000>Good</FONT>" : "<font color=#D09000>Low</FONT>") : "<font color=#F00000>None</FONT>"]</B><BR>"
+		t += "Power cell: <B>[cell ? "[round(cell.percent())]%" : "<font color=red>Not connected.</FONT>"]</B>"
 		if(cell)
 			t += " ([charging ? ( charging == 1 ? "Charging" : "Fully charged" ) : "Not charging"])"
 			t += " ([chargemode ? "Auto" : "Off"])"
@@ -532,14 +532,14 @@
 		if (!istype(user, /mob/living/silicon))
 			t += "<I>(Swipe ID card to lock interface.)</I><BR>"
 		t += "Main breaker: [operating ? "<B>On</B> <A href='?src=\ref[src];breaker=1'>Off</A>" : "<A href='?src=\ref[src];breaker=1'>On</A> <B>Off</B>" ]<BR>"
-		t += "External power : <B>[ main_status ? (main_status ==2 ? "<FONT color_hyalor=#004000>Good</FONT>" : "<FONT color_hyalor=#D09000>Low</FONT>") : "<FONT color_hyalor=#F00000>None</FONT>"]</B><BR>"
+		t += "External power : <B>[ main_status ? (main_status ==2 ? "<font color=#004000>Good</FONT>" : "<font color=#D09000>Low</FONT>") : "<font color=#F00000>None</FONT>"]</B><BR>"
 		if(cell)
 			t += "Power cell: <B>[round(cell.percent())]%</B>"
 			t += " ([charging ? ( charging == 1 ? "Charging" : "Fully charged" ) : "Not charging"])"
 			t += " ([chargemode ? "<A href='?src=\ref[src];cmode=1'>Off</A> <B>Auto</B>" : "<B>Off</B> <A href='?src=\ref[src];cmode=1'>Auto</A>"])"
 
 		else
-			t += "Power cell: <B><FONT color_hyalor=red>Not connected.</FONT></B>"
+			t += "Power cell: <B><font color=red>Not connected.</FONT></B>"
 
 		t += "<BR><HR>Power channels<BR><PRE>"
 
