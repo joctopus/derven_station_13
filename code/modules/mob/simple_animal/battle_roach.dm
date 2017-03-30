@@ -58,7 +58,7 @@
 			spawn(60)
 				if(prob(2))
 					spawn(25)
-						if(prob(30))
+						if(prob(3))
 							new /mob/living/simple_animal/hostile/battleroach(src.loc)
 
 		if(client)

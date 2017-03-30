@@ -1,7 +1,7 @@
 var/image/FOV_image
 
 client/proc/MYFOV()
-	spawn(5)
+	spawn(3)
 		if(mob.resting == 0)
 			for(var/mob/O in range(7, mob))
 				if(O != mob && O.loc != mob.loc)
@@ -13,7 +13,7 @@ client/proc/MYFOV()
 			//O.color = "red"
 
 client/proc/clear_FOV()
-	spawn(5)
+	spawn(3)
 		for(FOV_image in images)
 			images.Remove(FOV_image)
 
