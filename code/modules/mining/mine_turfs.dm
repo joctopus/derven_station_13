@@ -287,6 +287,24 @@
 	icon_plating = "asteroid"
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 
+	lava
+		icon_state = "lava"
+		temperature = 1000
+		luminosity = 2
+
+		Enter(mob/living/carbon/human/O)
+			O.adjustFireLoss(1000)
+			..()
+
+	catwalk_lava
+		icon_state = "catwalk_lava"
+		temperature = 370
+		luminosity = 2
+
+	snow
+		icon_state ="snow"
+		temperature = TCMB
+
 /turf/simulated/floor/plating/airless/asteroid/New()
 	var/proper_name = name
 	..()

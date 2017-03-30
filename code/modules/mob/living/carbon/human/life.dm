@@ -941,18 +941,19 @@
 					healths.icon_state = "health7"
 
 			if (nutrition_icon)
-				switch(nutrition)
-					if(350 to INFINITY)
-						nutrition_icon.icon_state = "nutrition0"
-					if(250 to 350)
-						nutrition_icon.icon_state = "nutrition1"
-					if(150 to 250)
-						nutrition_icon.icon_state = "nutrition2"
-					if(100 to 150)
-						nutrition_icon.icon_state = "nutrition3"
-					else
-						adjustOxyLoss(rand(2,4))
-						nutrition_icon.icon_state = "nutrition4"
+				if(prob(30))
+					switch(nutrition)
+						if(350 to INFINITY)
+							nutrition_icon.icon_state = "nutrition0"
+						if(250 to 350)
+							nutrition_icon.icon_state = "nutrition1"
+						if(150 to 250)
+							nutrition_icon.icon_state = "nutrition2"
+						if(100 to 150)
+							nutrition_icon.icon_state = "nutrition3"
+						else
+							adjustOxyLoss(rand(1,2))
+							nutrition_icon.icon_state = "nutrition4"
 
 			if (pressure)
 

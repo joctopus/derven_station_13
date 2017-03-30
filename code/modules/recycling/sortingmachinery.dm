@@ -143,6 +143,15 @@
 			return
 
 
+/obj/item/device/painter
+	name = "asteroid_painter"
+	icon_state = "forensic0"
+
+	verb/paintme()
+		set src in usr
+		for(var/turf/simulated/wall/W in get_step(usr, usr.dir))
+			W.icon_state = "rock"
+
 /obj/item/device/destTagger
 	name = "destination tagger"
 	desc = "Used to set the destination of properly wrapped packages."

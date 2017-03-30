@@ -44,6 +44,7 @@
 #include "code\FOV.dm"
 #include "code\names.dm"
 #include "code\setup.dm"
+#include "code\sound_effects.dm"
 #include "code\stylesheet.dm"
 #include "code\ATMOSPHERICS\atmospherics.dm"
 #include "code\ATMOSPHERICS\datum_pipe_network.dm"

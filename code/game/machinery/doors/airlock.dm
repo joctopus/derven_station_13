@@ -467,10 +467,6 @@ About the new airlock wires panel:
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)
 		s.start() //sparks always.
-	if(prob(10))
-		var/datum/effect/effect/system/harmless_smoke_spread/s = new /datum/effect/effect/system/harmless_smoke_spread
-		s.set_up(5, 1, src)
-		s.start() //sparks always.
 	switch(animation)
 		if("opening")
 			if(overlays) overlays = null

@@ -90,6 +90,8 @@ datum/controller/game_controller
 		for(var/mob/M in world)
 			M.Life()
 
+		sfc.process()
+
 		sleep(-1)
 
 		for(var/datum/disease/D in active_diseases)
