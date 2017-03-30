@@ -255,6 +255,7 @@
 /atom/Click(location,control,params)
 	//world << "atom.Click() on [src] by [usr] : src.type is [src.type]"
 
+	usr.dir = get_dir(usr,src)
 	if(usr.client.buildmode)
 		build_click(usr, usr.client.buildmode, location, control, params, src)
 		return

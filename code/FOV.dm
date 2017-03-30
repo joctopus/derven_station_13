@@ -2,8 +2,8 @@ var/image/FOV_image
 
 client/proc/MYFOV()
 	spawn(5)
-		for(var/atom/movable/O in range(7, mob))
-			if((istype(O, /mob) || istype(O, /obj)) && (!istype(O, /obj/structure) && !istype(O, /obj/machinery)) )
+		if(mob.resting == 0)
+			for(var/mob/O in range(7, mob))
 				if(O != mob && O.loc != mob.loc)
 					if(draw_my_lines_and_check(mob.x, mob.y, mob.dir, 7, O) == 1)
 						FOV_image = image(null)
