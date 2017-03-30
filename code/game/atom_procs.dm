@@ -577,6 +577,13 @@ var/using_new_click_proc = 0 //TODO ERRORAGE (This is temporary, while the DblCl
 		return
 	}
 
+	// ------- CTRL-CLICK  -------
+
+	if(parameters["ctrl"]){
+		CtrlClick(usr)
+		return
+	}
+
 
 	// ------- AI -------
 	if (istype(usr, /mob/living/silicon/ai))
@@ -866,8 +873,12 @@ var/using_new_click_proc = 0 //TODO ERRORAGE (This is temporary, while the DblCl
 				usr.next_move = world.time + 6
 	return
 
-/atom/proc/ShiftClick(var/mob/M as mob)
+/atom/proc/ShiftClick()
 	examine()
+	return
+
+/atom/proc/CtrlClick(var/mob/M as mob)
+	M.pulling = src
 	return
 
 /atom/proc/get_global_map_pos()
