@@ -303,7 +303,7 @@
 
 	snow
 		icon_state ="snow"
-		temperature = TCMB
+		temperature = TCMB + 180
 
 /turf/simulated/floor/plating/airless/asteroid/New()
 	var/proper_name = name
