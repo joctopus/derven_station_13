@@ -425,7 +425,7 @@ datum/preferences
 		if(link_tags["hair"])
 			switch(link_tags["hair"])
 				if("input")
-					var/new_hair = input(user, "Please select hair color_hyalor.", "Character Generation") as color
+					var/new_hair = input(user, "Please select hair color.", "Character Generation") as color
 					if(new_hair)
 						r_hair = hex2num(copytext(new_hair, 2, 4))
 						g_hair = hex2num(copytext(new_hair, 4, 6))
@@ -436,7 +436,7 @@ datum/preferences
 		if(link_tags["facial"])
 			switch(link_tags["facial"])
 				if("input")
-					var/new_facial = input(user, "Please select facial hair color_hyalor.", "Character Generation") as color
+					var/new_facial = input(user, "Please select facial hair color.", "Character Generation") as color
 					if(new_facial)
 						r_facial = hex2num(copytext(new_facial, 2, 4))
 						g_facial = hex2num(copytext(new_facial, 4, 6))
@@ -447,7 +447,7 @@ datum/preferences
 		if(link_tags["eyes"])
 			switch(link_tags["eyes"])
 				if("input")
-					var/new_eyes = input(user, "Please select eye color_hyalor.", "Character Generation") as color
+					var/new_eyes = input(user, "Please select eye color.", "Character Generation") as color
 					if(new_eyes)
 						r_eyes = hex2num(copytext(new_eyes, 2, 4))
 						g_eyes = hex2num(copytext(new_eyes, 4, 6))

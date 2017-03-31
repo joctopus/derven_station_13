@@ -60,7 +60,7 @@
 
 	process()
 		spawn(25)
-			if(prob(10))
+			if(prob(7))
 				if(!vines)
 					del(src) //Kudzu exterminated
 					return

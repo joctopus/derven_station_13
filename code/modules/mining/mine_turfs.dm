@@ -312,10 +312,18 @@
 	//if (prob(50))
 	//	seedName = pick(list("1","2","3","4"))
 	//	seedAmt = rand(1,4)
-	if(prob(20))
-		icon_state = "asteroid[rand(0,8)]"
+
+
+	if(istype(src, /turf/simulated/floor/plating/airless/asteroid/lava))
+		for(var/turf/simulated/floor/plating/airless/asteroid/A in range(1, src))
+			if(!istype(A, /turf/simulated/floor/plating/airless/asteroid/lava))
+				A.color = "#565656"
+	else
+		if(prob(20))
+			icon_state = "asteroid[rand(0,8)]"
 	spawn(2)
 		updateMineralOverlays()
+
 
 /turf/simulated/floor/plating/airless/asteroid/ex_act(severity)
 	return
