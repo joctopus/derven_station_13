@@ -322,9 +322,20 @@
 	else
 		if(prob(20))
 			icon_state = "asteroid[rand(0,8)]"
+	icon_plating = icon_state
 	spawn(2)
 		updateMineralOverlays()
 
+/turf/simulated/floor/plating/airless/asteroid/update_visuals()
+	..()
+	if(istype(get_step(src, NORTH), /turf/simulated/mineral))
+		src.overlays += image('walls.dmi', "rock_side_n")
+	if(istype(get_step(src, SOUTH), /turf/simulated/mineral))
+		src.overlays += image('walls.dmi', "rock_side_s", layer=6)
+	if(istype(get_step(src, EAST), /turf/simulated/mineral))
+		src.overlays += image('walls.dmi', "rock_side_e", layer=6)
+	if(istype(get_step(src, WEST), /turf/simulated/mineral))
+		src.overlays += image('walls.dmi', "rock_side_w", layer=6)
 
 /turf/simulated/floor/plating/airless/asteroid/ex_act(severity)
 	return
