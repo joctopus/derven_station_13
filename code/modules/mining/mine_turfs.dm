@@ -283,13 +283,12 @@
 	icon_state = "asteroid"
 	oxygen = 15
 	nitrogen = 3
-	temperature = 355
+	temperature = 300
 	icon_plating = "asteroid"
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 
 	lava
 		icon_state = "lava"
-		temperature = 1000
 		luminosity = 2
 
 		Enter(mob/living/carbon/human/O)
@@ -303,7 +302,6 @@
 
 	snow
 		icon_state ="snow"
-		temperature = TCMB + 100
 
 /turf/simulated/floor/plating/airless/asteroid/New()
 	var/proper_name = name
