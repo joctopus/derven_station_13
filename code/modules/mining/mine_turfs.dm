@@ -303,7 +303,7 @@
 
 	snow
 		icon_state ="snow"
-		temperature = TCMB + 180
+		temperature = TCMB + 100
 
 /turf/simulated/floor/plating/airless/asteroid/New()
 	var/proper_name = name
@@ -315,9 +315,10 @@
 
 
 	if(istype(src, /turf/simulated/floor/plating/airless/asteroid/lava))
-		for(var/turf/simulated/floor/plating/airless/asteroid/A in range(1, src))
+		for(var/turf/simulated/floor/plating/airless/asteroid/A in range(2, src))
 			if(!istype(A, /turf/simulated/floor/plating/airless/asteroid/lava))
-				A.color = "#565656"
+				A.color = pick("#d05624", "#ff5624", "#ff6b10")
+
 	else
 		if(prob(20))
 			icon_state = "asteroid[rand(0,8)]"
